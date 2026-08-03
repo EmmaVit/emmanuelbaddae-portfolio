@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuel Brenyah Addae | Associate Mobile & Software Developer Portfolio</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Emmanuel Brenyah Addae | Associate Mobile & Software Developer">
+  <meta name="description" content="Portfolio of Emmanuel Brenyah Addae – Computer Science & Engineering Graduate, Associate Mobile Developer skilled in Flutter, Dart, JavaScript, Product Management, and API Integration.">
+  <meta name="keywords" content="Emmanuel Brenyah Addae, AddEmma, Mobile Developer, Flutter Developer, Dart, Software Engineer, Ghana Developer, Vitara Company Ltd, UMaT">
+  <meta name="author" content="Emmanuel Brenyah Addae">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emmavit.github.io/emmanuelbaddae-portfolio/">
+  <meta property="og:title" content="Emmanuel Brenyah Addae | Portfolio">
+  <meta property="og:description" content="Associate Mobile Developer & CS Graduate. Specializing in Flutter, Web Apps, and End-to-End Solutions.">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="logo">
+        <div class="logo-badge">EA</div>
+        <span>ADDEMMA</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo">
+        <div class="logo-badge">EA</div>
+        <span>ADDEMMA</span>
+      </div>
+      <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="drawer-links">
+      <a href="#home" class="drawer-link">Home</a>
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#skills" class="drawer-link">Skills</a>
+      <a href="#experience" class="drawer-link">Experience</a>
+      <a href="#projects" class="drawer-link">Projects</a>
+      <a href="#education" class="drawer-link">Education</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+    </div>
+    <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 10px;">
+      <a href="Emmanuel B. Addae CV.pdf" download class="btn btn-primary" style="width: 100%;">
+        <i class="fa-solid fa-file-pdf"></i> Download PDF CV
+      </a>
+      <a href="Emmanuel_B_Addae_CV_Professional.docx" download class="btn btn-secondary" style="width: 100%;">
+        <i class="fa-solid fa-file-word"></i> Download DOCX CV
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Hero Content -->
+          <div class="hero-content">
+            <div class="hero-status">
+              <span class="pulse-dot"></span>
+              Available for Full-time & Remote Roles
+            </div>
+            
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Emmanuel Brenyah Addae</span>
+            </h1>
+
+            <div class="hero-subtitle-wrapper">
+              <span>I am a</span>
+              <span id="typedText" class="gradient-text"></span>
+              <span class="typed-cursor">|</span>
+            </div>
+
+            <p class="hero-text">
+              Computer Science & Engineering graduate and former National Service Associate Mobile Developer at <strong>Vitara Company Ltd</strong>. Dedicated to crafting seamless Flutter cross-platform mobile apps, high-performance web applications, and intuitive product management solutions.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-code"></i> Explore Projects
+              </a>
+              <a href="Emmanuel B. Addae CV.pdf" download class="btn btn-secondary">
+                <i class="fa-solid fa-file-pdf"></i> PDF Resume
+              </a>
+              <a href="Emmanuel_B_Addae_CV_Professional.docx" download class="btn btn-secondary">
+                <i class="fa-solid fa-file-word"></i> DOCX Resume
+              </a>
+              <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-num">BSc</div>
+                <div class="stat-label">CS & Engineering (UMaT)</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">NPS</div>
+                <div class="stat-label">National Service Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">4+</div>
+                <div class="stat-label">Mobile & Web Apps Built</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Graphic: Terminal Code Window -->
+          <div class="hero-graphic">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-controls">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-title">developer_profile.dart</div>
+              </div>
+              <div class="terminal-body">
+                <p><span class="code-keyword">class</span> <span class="code-func">SoftwareEngineer</span> {</p>
+                <p>&nbsp;&nbsp;<span class="code-keyword">final</span> String name = <span class="code-string">'Emmanuel B. Addae'</span>;</p>
+                <p>&nbsp;&nbsp;<span class="code-keyword">final</span> String degree = <span class="code-string">'BSc Computer Science'</span>;</p>
+                <p>&nbsp;&nbsp;<span class="code-keyword">final</span> List&lt;String&gt; coreStack = [</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'Flutter & Dart'</span>,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'C++'</span>, <span class="code-string">'JavaScript'</span>,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'MySQL & SQLite'</span>,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'REST APIs'</span></p>
+                <p>&nbsp;&nbsp;];</p>
+                <p>&nbsp;&nbsp;<span class="code-keyword">bool</span> isReadyForJob() =&gt; <span class="code-keyword">true</span>;</p>
+                <p>}</p>
+                <p><span class="code-comment">// Let's build scalable applications together!</span></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">About Me</span>
+          <h2 class="section-title">Driven by Innovation & Problem-Solving</h2>
+          <p class="section-description">
+            Passionate software engineer with real-world engineering, mobile testing, and product documentation experience.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card about-card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Professional Background</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7;">
+              I hold a <strong>BSc in Computer Science and Engineering</strong> from the University of Mines and Technology (UMaT), Takoradi, Ghana. I recently completed my National Service (NPS) as an <strong>Associate Mobile Developer</strong> at Vitara Company Ltd, where I developed feature-rich Flutter mobile apps, built automated/E2E test suites, created Flutter Web administration portals, and designed error reporting mechanisms.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Combining software development precision with product management insights, I excel at turning complex business requirements into intuitive, accessible, and high-performance digital products.
+            </p>
+          </div>
+
+          <div class="about-highlights">
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+              <div class="highlight-title">Mobile Apps</div>
+              <div class="highlight-desc">Flutter, Dart, E2E Testing, SQLite & REST APIs</div>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-globe"></i></div>
+              <div class="highlight-title">Web Engineering</div>
+              <div class="highlight-desc">HTML5, CSS3, JavaScript, Responsive Layouts</div>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-list-check"></i></div>
+              <div class="highlight-title">Product Mgmt</div>
+              <div class="highlight-desc">Documentation, User Guides, 30% Boost in Adoption</div>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="highlight-title">Agile & Remote</div>
+              <div class="highlight-desc">Jira, Slack, Miro, Zoom, Google Workspace</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical & Soft Skills Section -->
+    <section id="skills" class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Technical Proficiency</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-description">A breakdown of my technical stack, databases, collaboration tools, and soft skills.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="skill-filters">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="dev">Programming & Dev</button>
+          <button class="filter-btn" data-filter="db">Database & APIs</button>
+          <button class="filter-btn" data-filter="tools">Tools & Collaboration</button>
+          <button class="filter-btn" data-filter="soft">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid" id="skillsContainer">
+          <!-- Skill Item: Dart & Flutter -->
+          <div class="glass-card skill-card" data-category="dev">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-mobile-button"></i></div>
+                <div class="skill-name">Dart & Flutter</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Cross-platform mobile application development, UI widgets, state management, and Flutter Web portals.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">Dart</span>
+              <span class="skill-tag">Flutter Web</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: C++ -->
+          <div class="glass-card skill-card" data-category="dev">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-code"></i></div>
+                <div class="skill-name">C++</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Object-oriented programming, data structures, algorithm optimization, and logic implementation.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">Data Structures</span>
+              <span class="skill-tag">C++</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: Web Tech -->
+          <div class="glass-card skill-card" data-category="dev">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-brands fa-html5"></i></div>
+                <div class="skill-name">HTML, CSS & JavaScript</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Responsive web design, modern DOM manipulation, cross-browser compatibility, and glassmorphism styling.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: GitHub & Version Control -->
+          <div class="glass-card skill-card" data-category="dev">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-brands fa-github"></i></div>
+                <div class="skill-name">Git & GitHub</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Version control, branch management, collaborative workflows, pull requests, and repository maintenance.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">CI/CD Workflow</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: Databases -->
+          <div class="glass-card skill-card" data-category="db">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-database"></i></div>
+                <div class="skill-name">MySQL & SQLite</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Relational database design, query optimization, local persistence for mobile apps, and data management.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">SQL Queries</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: API Integration -->
+          <div class="glass-card skill-card" data-category="db">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
+                <div class="skill-name">API Integration</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">RESTful APIs integration, JSON data parsing, asynchronous programming, HTTP client requests.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">JSON</span>
+              <span class="skill-tag">Async/Await</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: Collaboration Tools -->
+          <div class="glass-card skill-card" data-category="tools">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="skill-name">Remote Collaboration</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Google Workspace, Slack, Jira, Miro Board, Zoom Meet for seamless Agile teamwork.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Jira</span>
+              <span class="skill-tag">Slack</span>
+              <span class="skill-tag">Miro</span>
+              <span class="skill-tag">Zoom</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: Productivity Tools -->
+          <div class="glass-card skill-card" data-category="tools">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="skill-name">Productivity Suites</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Microsoft Office (Word, Excel, PowerPoint, Outlook) & Google Docs/Sheets/Slides for documentation.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">MS Office</span>
+              <span class="skill-tag">Google Docs</span>
+              <span class="skill-tag">Sheets</span>
+            </div>
+          </div>
+
+          <!-- Skill Item: Soft Skills -->
+          <div class="glass-card skill-card" data-category="soft">
+            <div>
+              <div class="skill-header">
+                <div class="skill-icon-wrapper"><i class="fa-solid fa-brain"></i></div>
+                <div class="skill-name">Soft & Interpersonal Skills</div>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Problem-solving • Teamwork • Effective Communication • Time Management • Adaptability • Easy-to-Relate.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Communication</span>
+              <span class="skill-tag">Adaptability</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Career Journey</span>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-description">A breakdown of my professional development and impact across engineering and product management roles.</p>
+        </div>
+
+        <div class="timeline">
+          
+          <!-- Experience 1: Associate Mobile Developer (NPS) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">Oct 2025 – Oct 2026</span>
+              <h3 class="timeline-role">Associate Mobile Developer (NPS)</h3>
+              <div class="timeline-company">Vitara Company Ltd • Wa, Ghana</div>
+              <ul class="timeline-bullet-list">
+                <li>Built and deployed core mobile features for <strong>TreeSyt</strong> using offline-first Flutter architecture, improving application responsiveness and field reliability.</li>
+                <li>Created and executed comprehensive End-to-End (E2E) test suites across Mobile and Web platforms to guarantee workflow stability.</li>
+                <li>Architected and shipped a dedicated <strong>Mobile Agent Onboarding Application</strong> empowering HR and Agent Managers with candidate tracking, interviewing pipelines, and digital agent training.</li>
+                <li>Designed an in-app <strong>Error Reporting History</strong> feature allowing field agents to capture and submit diagnostic reports directly within the mobile application.</li>
+                <li>Engineered a companion <strong>Flutter Web Administrative Dashboard</strong> for the Mobile Team to monitor, triage, and resolve field error reports in real time.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2: Product Management Intern -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">Sep – Dec 2024</span>
+              <h3 class="timeline-role">Product Management Intern</h3>
+              <div class="timeline-company">Vitara Company Ltd • Wa, Ghana</div>
+              <ul class="timeline-bullet-list">
+                <li>Documented mobile and web module functionalities and created comprehensive user guides, streamlining onboarding efficiency for new employees.</li>
+                <li>Trained 15+ staff members on platform operation, achieving a <strong>30% boost in adoption and overall proficiency</strong>.</li>
+                <li>Collaborated with cross-functional remote teams to test features, log bugs, and recommend UX improvements based on field feedback.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3: Web Development Intern 2023 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">Sep – Dec 2023</span>
+              <h3 class="timeline-role">Web Development Intern</h3>
+              <div class="timeline-company">LoGig LLC • Takoradi, Ghana</div>
+              <ul class="timeline-bullet-list">
+                <li>Developed responsive, mobile-first web user interfaces using HTML, CSS, and JavaScript.</li>
+                <li>Assisted in debugging and cross-browser testing to ensure seamless performance across major desktop and mobile platforms.</li>
+                <li>Contributed to front-end feature documentation, ensuring smoother knowledge transfer and code scalability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 4: Web Development Intern 2022 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">Sep – Dec 2022</span>
+              <h3 class="timeline-role">Web Development Intern</h3>
+              <div class="timeline-company">LoGig LLC • Takoradi, Ghana</div>
+              <ul class="timeline-bullet-list">
+                <li>Built interactive web applications using JavaScript, HTML, and CSS, elevating overall user experience and web accessibility.</li>
+                <li>Partnered with senior software developers in an Agile setup, contributing consistently to project milestones.</li>
+                <li>Performed comprehensive application testing across devices, successfully reducing reported user bugs by 5%.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfolio Highlights</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-description">Key software, mobile, and web products I have built and contributed to.</p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1: TreeSyt Mobile & E2E Testing -->
+          <div class="glass-card project-card">
+            <div class="project-banner">
+              <div class="project-banner-overlay"></div>
+              <i class="fa-solid fa-tree project-banner-icon"></i>
+            </div>
+            <div class="project-info">
+              <span class="project-type">Mobile Application</span>
+              <h3 class="project-title">TreeSyt Mobile Features & E2E Testing</h3>
+              <p class="project-desc">Built key mobile features and automated E2E test cases for both mobile and web platforms, ensuring high quality and reliability.</p>
+              <div class="project-tech">
+                <span class="tech-badge">Flutter</span>
+                <span class="tech-badge">Dart</span>
+                <span class="tech-badge">E2E Testing</span>
+                <span class="tech-badge">REST APIs</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
+                  <i class="fa-solid fa-circle-info"></i> Project Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Mobile Agent Onboarding App -->
+          <div class="glass-card project-card">
+            <div class="project-banner" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">
+              <div class="project-banner-overlay"></div>
+              <i class="fa-solid fa-user-plus project-banner-icon"></i>
+            </div>
+            <div class="project-info">
+              <span class="project-type">Mobile Application</span>
+              <h3 class="project-title">Agent Onboarding & Training App</h3>
+              <p class="project-desc">Mobile solution empowering HR and Agent Managers with candidate applications, interviewing pipelines, and digital agent training.</p>
+              <div class="project-tech">
+                <span class="tech-badge">Flutter</span>
+                <span class="tech-badge">SQLite</span>
+                <span class="tech-badge">UI/UX</span>
+                <span class="tech-badge">Workflow Automation</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
+                  <i class="fa-solid fa-circle-info"></i> Project Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Mobile Issue Reporter & Flutter Web Admin -->
+          <div class="glass-card project-card">
+            <div class="project-banner" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
+              <div class="project-banner-overlay"></div>
+              <i class="fa-solid fa-bug project-banner-icon"></i>
+            </div>
+            <div class="project-info">
+              <span class="project-type">Flutter Web & Mobile</span>
+              <h3 class="project-title">Error Reporting System & Admin Web</h3>
+              <p class="project-desc">Built in-app error reporting history for mobile agents and a dedicated Flutter Web administrative dashboard to track & resolve issues.</p>
+              <div class="project-tech">
+                <span class="tech-badge">Flutter Web</span>
+                <span class="tech-badge">Dart</span>
+                <span class="tech-badge">API Integration</span>
+                <span class="tech-badge">Dashboard</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
+                  <i class="fa-solid fa-circle-info"></i> Project Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: LoGig LLC Responsive Web Suite -->
+          <div class="glass-card project-card">
+            <div class="project-banner" style="background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);">
+              <div class="project-banner-overlay"></div>
+              <i class="fa-solid fa-laptop-code project-banner-icon"></i>
+            </div>
+            <div class="project-info">
+              <span class="project-type">Web Engineering</span>
+              <h3 class="project-title">Responsive Front-End Web Applications</h3>
+              <p class="project-desc">Developed mobile-first front-end web interfaces with optimized accessibility, cross-browser compatibility, and database retrieval.</p>
+              <div class="project-tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">MySQL</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
+                  <i class="fa-solid fa-circle-info"></i> Project Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Academic Credentials</span>
+          <h2 class="section-title">Education & Courses</h2>
+          <p class="section-description">Formal university degree and verified online certifications.</p>
+        </div>
+
+        <div class="education-grid">
+          
+          <!-- Edu 1: UMaT -->
+          <div class="glass-card edu-card">
+            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 class="edu-title">BSc in Computer Science & Engineering</h3>
+            <div class="edu-institution">University of Mines and Technology (UMaT)</div>
+            <div class="edu-date"><i class="fa-solid fa-location-dot"></i> Takoradi, Ghana • Graduated</div>
+          </div>
+
+          <!-- Edu 2: Udemy Dart & Flutter -->
+          <div class="glass-card edu-card">
+            <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h3 class="edu-title">Dart & Flutter Development Course</h3>
+            <div class="edu-institution">Udemy Online Learning</div>
+            <div class="edu-date"><i class="fa-solid fa-clock"></i> Comprehensive Mobile Engineering</div>
+          </div>
+
+          <!-- Edu 3: Alison Diplomas -->
+          <div class="glass-card edu-card">
+            <div class="edu-icon"><i class="fa-solid fa-award"></i></div>
+            <h3 class="edu-title">Diploma in Product Management & Web Dev</h3>
+            <div class="edu-institution">Alison Online Courses</div>
+            <div class="edu-date"><i class="fa-solid fa-check-double"></i> Product Management & Web with HTML/CSS</div>
+          </div>
+
+          <!-- Edu 4: Senior High School -->
+          <div class="glass-card edu-card">
+            <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+            <h3 class="edu-title">WASSCE Secondary Certificate</h3>
+            <div class="edu-institution">Baidoo Bonsoe Senior High Technical School</div>
+            <div class="edu-date"><i class="fa-solid fa-location-dot"></i> Ghana</div>
+          </div>
+
+        </div>
+
+        <!-- Leadership & References Subsection -->
+        <div style="margin-top: 70px;">
+          <div class="section-header" style="margin-bottom: 40px;">
+            <span class="section-subtitle">Leadership & Endorsements</span>
+            <h2 class="section-title">Leadership & Academic References</h2>
+          </div>
+
+          <div class="ref-grid">
+            <!-- Leadership Item -->
+            <div class="glass-card ref-card">
+              <div class="edu-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <h3 class="ref-name">Campus Ministry Leadership</h3>
+              <div class="ref-title">Organizer (UMaT 2024/2025) & President (2020/2021)</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">
+                Led community outreach, team organization, and event planning for the Church of Christ Campus Ministry at UMaT and Baidoo Bonsoe SHTS.
+              </p>
+            </div>
+
+            <!-- Ref 1: Engr Dr Albert K. Kwansah Ansah -->
+            <div class="glass-card ref-card">
+              <h3 class="ref-name">Engr Dr Albert K. Kwansah Ansah</h3>
+              <div class="ref-title">University of Mines and Technology, Ghana</div>
+              <div class="ref-contact-item">
+                <i class="fa-solid fa-envelope" style="color: var(--accent-secondary);"></i>
+                <span>afkansah@umat.edu.gh</span>
+              </div>
+              <div class="ref-contact-item">
+                <i class="fa-solid fa-phone" style="color: var(--accent-secondary);"></i>
+                <span>+233 24 951 8866</span>
+              </div>
+            </div>
+
+            <!-- Ref 2: Dr Ezekiel Martey -->
+            <div class="glass-card ref-card">
+              <h3 class="ref-name">Dr Ezekiel Martey</h3>
+              <div class="ref-title">University of Mines and Technology, Ghana</div>
+              <div class="ref-contact-item">
+                <i class="fa-solid fa-envelope" style="color: var(--accent-secondary);"></i>
+                <span>Ezzy2win@hotmail.com</span>
+              </div>
+              <div class="ref-contact-item">
+                <i class="fa-solid fa-phone" style="color: var(--accent-secondary);"></i>
+                <span>+233 24 965 3242</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Let's Connect & Work Together</h2>
+          <p class="section-description">I am currently open for full-time software engineering roles, mobile developer opportunities, and contract projects.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Details -->
+          <div class="glass-card contact-info-card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Contact Details</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Feel free to reach out via phone, email, or social channels!</p>
+
+            <div class="contact-methods">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="contact-label">Email</div>
+                  <a href="mailto:addaebemmanuel@gmail.com" class="contact-val">addaebemmanuel@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <div class="contact-label">Phone Numbers</div>
+                  <div class="contact-val">+233 59 354 3427</div>
+                  <div style="font-size: 0.85rem; color: var(--text-muted);">+233 24 253 7088</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div>
+                  <div class="contact-label">LinkedIn Profile</div>
+                  <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="contact-val">Connect on LinkedIn</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <div class="contact-label">Location</div>
+                  <div class="contact-val">Takoradi, Ghana (Available Remote & On-site)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="glass-card contact-form-card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Send Me a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="e.g. John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" class="form-control" placeholder="e.g. john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-control" placeholder="e.g. Job Opportunity / Collaboration" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-control" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#home" class="logo">
+          <div class="logo-badge">EA</div>
+          <span>ADDEMMA</span>
+        </a>
+
+        <div class="social-links">
+          <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:addaebemmanuel@gmail.com" class="social-icon" aria-label="Email Me">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+
+        <p class="copyright">
+          &copy; <span id="currentYear"></span> Emmanuel Brenyah Addae. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript Application File -->
+  <script src="script.js"></script>
+</body>
+</html>

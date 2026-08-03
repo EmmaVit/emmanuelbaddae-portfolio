@@ -1,0 +1,6 @@
+node_modules/
+*.log
+temp.zip
+docx_extracted/
+template_extracted/
+inspect_*.js
