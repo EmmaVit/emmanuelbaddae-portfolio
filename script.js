@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (portraitWrapper) {
-    let targetX = 50;
-    let targetY = 33;
-    let currentX = 50;
-    let currentY = 33;
-    let spotSize = 145;
-    let targetSize = 145;
+    let targetX = 52;
+    let targetY = 48;
+    let currentX = 52;
+    let currentY = 48;
+    let spotSize = 215;
+    let targetSize = 215;
     let rafId = null;
 
     const animateSpotlight = () => {
@@ -105,14 +105,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = portraitWrapper.getBoundingClientRect();
       targetX = Math.max(5, Math.min(95, ((e.clientX - rect.left) / rect.width) * 100));
       targetY = Math.max(5, Math.min(95, ((e.clientY - rect.top) / rect.height) * 100));
-      targetSize = 185;
+      targetSize = 230;
       startLoop();
     });
 
+    portraitWrapper.addEventListener('touchmove', (e) => {
+      if (!e.touches || !e.touches[0]) return;
+      const touch = e.touches[0];
+      const rect = portraitWrapper.getBoundingClientRect();
+      targetX = Math.max(5, Math.min(95, ((touch.clientX - rect.left) / rect.width) * 100));
+      targetY = Math.max(5, Math.min(95, ((touch.clientY - rect.top) / rect.height) * 100));
+      targetSize = 195;
+      startLoop();
+    }, { passive: true });
+
     portraitWrapper.addEventListener('mouseleave', () => {
-      targetX = 50;
-      targetY = 33;
-      targetSize = 145;
+      targetX = 52;
+      targetY = 48;
+      targetSize = 215;
       startLoop();
     });
 
