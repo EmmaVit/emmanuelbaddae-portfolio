@@ -1,676 +1,1115 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light" data-portrait="editorial">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel Brenyah Addae | Associate Mobile & Software Developer Portfolio</title>
-  
+  <title>Emmanuel Brenyah Addae — Mobile &amp; Software Engineer Portfolio</title>
+
   <!-- Primary Meta Tags -->
-  <meta name="title" content="Emmanuel Brenyah Addae | Associate Mobile & Software Developer">
-  <meta name="description" content="Portfolio of Emmanuel Brenyah Addae – Computer Science & Engineering Graduate, Associate Mobile Developer skilled in Flutter, Dart, JavaScript, Product Management, and API Integration.">
-  <meta name="keywords" content="Emmanuel Brenyah Addae, AddEmma, Mobile Developer, Flutter Developer, Dart, Software Engineer, Ghana Developer, Vitara Company Ltd, UMaT">
+  <meta name="title" content="Emmanuel Brenyah Addae — Mobile & Software Engineer Portfolio">
+  <meta name="description" content="Personal portfolio of Emmanuel Brenyah Addae (AddEmma) — Associate Mobile & Software Engineer specializing in Flutter, Dart, Full-Stack Web, AI Systems, and Product Management.">
+  <meta name="keywords" content="Emmanuel Brenyah Addae, AddEmma, Mobile Developer, Flutter Developer, Dart, Software Engineer, UI/UX Engineer, Ghana Developer, Vitara Company Ltd, UMaT">
   <meta name="author" content="Emmanuel Brenyah Addae">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://emmavit.github.io/emmanuelbaddae-portfolio/">
-  <meta property="og:title" content="Emmanuel Brenyah Addae | Portfolio">
-  <meta property="og:description" content="Associate Mobile Developer & CS Graduate. Specializing in Flutter, Web Apps, and End-to-End Solutions.">
+  <meta property="og:title" content="Emmanuel Brenyah Addae — Personal Portfolio">
+  <meta property="og:description" content="Designing and engineering digital products, cross-platform Flutter apps, and AI systems that are clear, usable, and conversion focused.">
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
   <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Header / Navigation Bar -->
-  <header class="navbar" id="navbar">
-    <div class="container">
-      <a href="#home" class="logo">
-        <div class="logo-badge">EA</div>
-        <span>ADDEMMA</span>
-      </a>
+  <!-- Atmospheric Mist / Cloud Background Canvas -->
+  <div class="ambient-atmosphere" aria-hidden="true">
+    <div class="cloud-layer cloud-1"></div>
+    <div class="cloud-layer cloud-2"></div>
+    <div class="cloud-layer cloud-3"></div>
+    <div class="grain-overlay"></div>
+  </div>
 
-      <nav class="nav-links">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
+  <!-- Custom Magnetic Cursor Follower (Desktop) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <a href="#contact" class="btn btn-primary">Hire Me</a>
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open mobile menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer Menu -->
+  <!-- Mobile Navigation Overlay & Drawer -->
   <div class="mobile-nav-overlay" id="mobileOverlay"></div>
-  <aside class="mobile-drawer" id="mobileDrawer">
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
     <div class="drawer-header">
-      <div class="logo">
-        <div class="logo-badge">EA</div>
-        <span>ADDEMMA</span>
+      <div class="status-pill status-pill-sm">
+        <span class="status-dot"></span>
+        <span>Available for New Project</span>
       </div>
-      <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+      <button class="drawer-close" id="drawerClose" aria-label="Close mobile menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    <div class="drawer-links">
-      <a href="#home" class="drawer-link">Home</a>
-      <a href="#about" class="drawer-link">About</a>
-      <a href="#skills" class="drawer-link">Skills</a>
-      <a href="#experience" class="drawer-link">Experience</a>
-      <a href="#projects" class="drawer-link">Projects</a>
-      <a href="#education" class="drawer-link">Education</a>
-      <a href="#contact" class="drawer-link">Contact</a>
-    </div>
-    <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 10px;">
-      <a href="Emmanuel B. Addae CV.pdf" download class="btn btn-primary" style="width: 100%;">
-        <i class="fa-solid fa-file-pdf"></i> Download PDF CV
+
+    <nav class="drawer-links">
+      <a href="#home" class="drawer-link"><span>Home</span> <small>[00]</small></a>
+      <a href="#work" class="drawer-link"><span>Work</span> <small>[08]</small></a>
+      <a href="#service" class="drawer-link"><span>Service</span> <small>[04]</small></a>
+      <a href="#experience" class="drawer-link"><span>Experience</span> <small>[4y+]</small></a>
+      <a href="#credentials" class="drawer-link"><span>Credentials</span> <small>[06]</small></a>
+      <a href="#contact" class="drawer-link"><span>Contact</span> <small>[↗]</small></a>
+    </nav>
+
+    <div class="drawer-footer">
+      <a href="Emmanuel B. Addae CV.pdf" download class="pill-btn pill-btn-dark" style="width: 100%; justify-content: center;">
+        <span>Download PDF CV</span>
+        <i class="fa-solid fa-arrow-down"></i>
       </a>
-      <a href="Emmanuel_B_Addae_CV_Professional.docx" download class="btn btn-secondary" style="width: 100%;">
-        <i class="fa-solid fa-file-word"></i> Download DOCX CV
+      <a href="Emmanuel_B_Addae_CV_Professional.docx" download class="pill-btn pill-btn-light" style="width: 100%; justify-content: center;">
+        <span>Download DOCX CV</span>
+        <i class="fa-regular fa-file-word"></i>
       </a>
     </div>
   </aside>
 
-  <!-- Main Content Wrapper -->
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-glow-1"></div>
-      <div class="hero-glow-2"></div>
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Left Hero Content -->
-          <div class="hero-content">
-            <div class="hero-status">
-              <span class="pulse-dot"></span>
-              Available for Full-time & Remote Roles
-            </div>
-            
-            <h1 class="hero-title">
-              Hi, I'm <span class="gradient-text">Emmanuel Brenyah Addae</span>
-            </h1>
+  <!-- Main Page Wrapper -->
+  <div class="page-shell">
 
-            <div class="hero-subtitle-wrapper">
-              <span>I am a</span>
-              <span id="typedText" class="gradient-text"></span>
-              <span class="typed-cursor">|</span>
-            </div>
+    <!-- ======================================================================
+         1. HERO SECTION (Dribbble Shot 1 — Framed Stage + Giant Split Type + Cutout)
+         ====================================================================== -->
+    <section id="home" class="editorial-frame hero-frame reveal-frame">
+      <div class="frame-inner hero-inner">
 
-            <p class="hero-text">
-              Computer Science & Engineering graduate and former National Service Associate Mobile Developer at <strong>Vitara Company Ltd</strong>. Dedicated to crafting seamless Flutter cross-platform mobile apps, high-performance web applications, and intuitive product management solutions.
-            </p>
+        <!-- Top Editorial Navbar inside Frame (sticky on scroll) -->
+        <header class="editorial-navbar" id="navbar">
+          <a href="#contact" class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for New Project</span>
+          </a>
 
-            <div class="hero-ctas">
-              <a href="#projects" class="btn btn-primary">
-                <i class="fa-solid fa-code"></i> Explore Projects
-              </a>
-              <a href="Emmanuel B. Addae CV.pdf" download class="btn btn-secondary">
-                <i class="fa-solid fa-file-pdf"></i> PDF Resume
-              </a>
-              <a href="Emmanuel_B_Addae_CV_Professional.docx" download class="btn btn-secondary">
-                <i class="fa-solid fa-file-word"></i> DOCX Resume
-              </a>
-              <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-              </a>
-            </div>
+          <nav class="editorial-nav-links" aria-label="Primary Navigation">
+            <a href="#work" class="ed-nav-link">Work <span class="nav-count">[8]</span></a>
+            <a href="#service" class="ed-nav-link">Service <span class="nav-count">[4]</span></a>
+            <a href="#experience" class="ed-nav-link">Experience <span class="nav-count">[4y+]</span></a>
+            <a href="#credentials" class="ed-nav-link">Skills <span class="nav-count">[9]</span></a>
+            <a href="#contact" class="ed-nav-link">Contact</a>
+          </nav>
 
-            <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-num">BSc</div>
-                <div class="stat-label">CS & Engineering (UMaT)</div>
+          <div class="editorial-nav-actions">
+            <button class="icon-pill-btn" id="portraitToggle" title="Switch Portrait Filter (Editorial Spotlight vs Full Studio Color)" aria-label="Toggle portrait color effect">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span class="btn-tiny-label" id="portraitModeLabel">Spotlight</span>
+            </button>
+            <button class="icon-pill-btn" id="themeToggle" title="Toggle Light / Dark Mode" aria-label="Toggle light and dark theme">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <a href="#contact" class="pill-btn pill-btn-dark magnetic-btn">
+              <span>Let's Talk</span>
+              <span class="arrow-ne">↗</span>
+            </a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Giant Split Outline / Solid Display Name -->
+        <div class="hero-stage" id="heroStage">
+          <div class="hero-marquee-headline" id="heroHeadline" aria-label="Emmanuel Addae">
+            <span class="headline-outline">EMMANUEL</span>
+            <span class="headline-solid">ADDAE</span>
+          </div>
+
+          <!-- Three-Column Hero Composition: Left Bio | Center Portrait | Right Social Pills -->
+          <div class="hero-composition">
+
+            <!-- Left Column: Role, Value Prop, CTA -->
+            <div class="hero-left-col reveal-up">
+              <div class="role-kicker">
+                <span class="kicker-tag">BSc CS &amp; Eng (UMaT)</span>
+                <span class="kicker-sep">•</span>
+                <span id="typedText" class="kicker-dynamic">Flutter &amp; Mobile Engineer</span>
               </div>
-              <div class="stat-item">
-                <div class="stat-num">NPS</div>
-                <div class="stat-label">National Service Completed</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-num">4+</div>
-                <div class="stat-label">Mobile & Web Apps Built</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Hero Graphic: Terminal Code Window -->
-          <div class="hero-graphic">
-            <div class="terminal-window">
-              <div class="terminal-header">
-                <div class="terminal-controls">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="terminal-title">developer_profile.dart</div>
-              </div>
-              <div class="terminal-body">
-                <p><span class="code-keyword">class</span> <span class="code-func">SoftwareEngineer</span> {</p>
-                <p>&nbsp;&nbsp;<span class="code-keyword">final</span> String name = <span class="code-string">'Emmanuel B. Addae'</span>;</p>
-                <p>&nbsp;&nbsp;<span class="code-keyword">final</span> String degree = <span class="code-string">'BSc Computer Science'</span>;</p>
-                <p>&nbsp;&nbsp;<span class="code-keyword">final</span> List&lt;String&gt; coreStack = [</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'Flutter & Dart'</span>,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'C++'</span>, <span class="code-string">'JavaScript'</span>,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'MySQL & SQLite'</span>,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'REST APIs'</span></p>
-                <p>&nbsp;&nbsp;];</p>
-                <p>&nbsp;&nbsp;<span class="code-keyword">bool</span> isReadyForJob() =&gt; <span class="code-keyword">true</span>;</p>
-                <p>}</p>
-                <p><span class="code-comment">// Let's build scalable applications together!</span></p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">About Me</span>
-          <h2 class="section-title">Driven by Innovation & Problem-Solving</h2>
-          <p class="section-description">
-            Passionate software engineer with real-world engineering, mobile testing, and product documentation experience.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="glass-card about-card">
-            <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Professional Background</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7;">
-              I hold a <strong>BSc in Computer Science and Engineering</strong> from the University of Mines and Technology (UMaT), Takoradi, Ghana. I recently completed my National Service (NPS) as an <strong>Associate Mobile Developer</strong> at Vitara Company Ltd, where I developed feature-rich Flutter mobile apps, built automated/E2E test suites, created Flutter Web administration portals, and designed error reporting mechanisms.
-            </p>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              Combining software development precision with product management insights, I excel at turning complex business requirements into intuitive, accessible, and high-performance digital products.
-            </p>
-          </div>
-
-          <div class="about-highlights">
-            <div class="highlight-box">
-              <div class="highlight-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-              <div class="highlight-title">Mobile Apps</div>
-              <div class="highlight-desc">Flutter, Dart, E2E Testing, SQLite & REST APIs</div>
-            </div>
-            <div class="highlight-box">
-              <div class="highlight-icon"><i class="fa-solid fa-globe"></i></div>
-              <div class="highlight-title">Web Engineering</div>
-              <div class="highlight-desc">HTML5, CSS3, JavaScript, Responsive Layouts</div>
-            </div>
-            <div class="highlight-box">
-              <div class="highlight-icon"><i class="fa-solid fa-list-check"></i></div>
-              <div class="highlight-title">Product Mgmt</div>
-              <div class="highlight-desc">Documentation, User Guides, 30% Boost in Adoption</div>
-            </div>
-            <div class="highlight-box">
-              <div class="highlight-icon"><i class="fa-solid fa-users"></i></div>
-              <div class="highlight-title">Agile & Remote</div>
-              <div class="highlight-desc">Jira, Slack, Miro, Zoom, Google Workspace</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical & Soft Skills Section -->
-    <section id="skills" class="section" style="background: var(--bg-secondary);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Technical Proficiency</span>
-          <h2 class="section-title">Skills & Technologies</h2>
-          <p class="section-description">A breakdown of my technical stack, databases, collaboration tools, and soft skills.</p>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="skill-filters">
-          <button class="filter-btn active" data-filter="all">All Skills</button>
-          <button class="filter-btn" data-filter="dev">Programming & Dev</button>
-          <button class="filter-btn" data-filter="db">Database & APIs</button>
-          <button class="filter-btn" data-filter="tools">Tools & Collaboration</button>
-          <button class="filter-btn" data-filter="soft">Soft Skills</button>
-        </div>
-
-        <div class="skills-grid" id="skillsContainer">
-          <!-- Skill Item: Dart & Flutter -->
-          <div class="glass-card skill-card" data-category="dev">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-mobile-button"></i></div>
-                <div class="skill-name">Dart & Flutter</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Cross-platform mobile application development, UI widgets, state management, and Flutter Web portals.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Flutter</span>
-              <span class="skill-tag">Dart</span>
-              <span class="skill-tag">Flutter Web</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: C++ -->
-          <div class="glass-card skill-card" data-category="dev">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-code"></i></div>
-                <div class="skill-name">C++</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Object-oriented programming, data structures, algorithm optimization, and logic implementation.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">OOP</span>
-              <span class="skill-tag">Data Structures</span>
-              <span class="skill-tag">C++</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: Web Tech -->
-          <div class="glass-card skill-card" data-category="dev">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-brands fa-html5"></i></div>
-                <div class="skill-name">HTML, CSS & JavaScript</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Responsive web design, modern DOM manipulation, cross-browser compatibility, and glassmorphism styling.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">JavaScript</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: GitHub & Version Control -->
-          <div class="glass-card skill-card" data-category="dev">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-brands fa-github"></i></div>
-                <div class="skill-name">Git & GitHub</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Version control, branch management, collaborative workflows, pull requests, and repository maintenance.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">CI/CD Workflow</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: Databases -->
-          <div class="glass-card skill-card" data-category="db">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-database"></i></div>
-                <div class="skill-name">MySQL & SQLite</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Relational database design, query optimization, local persistence for mobile apps, and data management.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">SQLite</span>
-              <span class="skill-tag">SQL Queries</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: API Integration -->
-          <div class="glass-card skill-card" data-category="db">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
-                <div class="skill-name">API Integration</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">RESTful APIs integration, JSON data parsing, asynchronous programming, HTTP client requests.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">REST APIs</span>
-              <span class="skill-tag">JSON</span>
-              <span class="skill-tag">Async/Await</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: Collaboration Tools -->
-          <div class="glass-card skill-card" data-category="tools">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
-                <div class="skill-name">Remote Collaboration</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Google Workspace, Slack, Jira, Miro Board, Zoom Meet for seamless Agile teamwork.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Jira</span>
-              <span class="skill-tag">Slack</span>
-              <span class="skill-tag">Miro</span>
-              <span class="skill-tag">Zoom</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: Productivity Tools -->
-          <div class="glass-card skill-card" data-category="tools">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-file-lines"></i></div>
-                <div class="skill-name">Productivity Suites</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Microsoft Office (Word, Excel, PowerPoint, Outlook) & Google Docs/Sheets/Slides for documentation.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">MS Office</span>
-              <span class="skill-tag">Google Docs</span>
-              <span class="skill-tag">Sheets</span>
-            </div>
-          </div>
-
-          <!-- Skill Item: Soft Skills -->
-          <div class="glass-card skill-card" data-category="soft">
-            <div>
-              <div class="skill-header">
-                <div class="skill-icon-wrapper"><i class="fa-solid fa-brain"></i></div>
-                <div class="skill-name">Soft & Interpersonal Skills</div>
-              </div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">Problem-solving • Teamwork • Effective Communication • Time Management • Adaptability • Easy-to-Relate.</p>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Communication</span>
-              <span class="skill-tag">Adaptability</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Work Experience Section -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Career Journey</span>
-          <h2 class="section-title">Work Experience</h2>
-          <p class="section-description">A breakdown of my professional development and impact across engineering and product management roles.</p>
-        </div>
-
-        <div class="timeline">
-          
-          <!-- Experience 1: Associate Mobile Developer (NPS) -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content">
-              <span class="timeline-date">Oct 2025 – Oct 2026</span>
-              <h3 class="timeline-role">Associate Mobile Developer (NPS)</h3>
-              <div class="timeline-company">Vitara Company Ltd • Wa, Ghana</div>
-              <ul class="timeline-bullet-list">
-                <li>Built and deployed core mobile features for <strong>TreeSyt</strong> using offline-first Flutter architecture, improving application responsiveness and field reliability.</li>
-                <li>Created and executed comprehensive End-to-End (E2E) test suites across Mobile and Web platforms to guarantee workflow stability.</li>
-                <li>Architected and shipped a dedicated <strong>Mobile Agent Onboarding Application</strong> empowering HR and Agent Managers with candidate tracking, interviewing pipelines, and digital agent training.</li>
-                <li>Designed an in-app <strong>Error Reporting History</strong> feature allowing field agents to capture and submit diagnostic reports directly within the mobile application.</li>
-                <li>Engineered a companion <strong>Flutter Web Administrative Dashboard</strong> for the Mobile Team to monitor, triage, and resolve field error reports in real time.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 2: Product Management Intern -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content">
-              <span class="timeline-date">Sep – Dec 2024</span>
-              <h3 class="timeline-role">Product Management Intern</h3>
-              <div class="timeline-company">Vitara Company Ltd • Wa, Ghana</div>
-              <ul class="timeline-bullet-list">
-                <li>Documented mobile and web module functionalities and created comprehensive user guides, streamlining onboarding efficiency for new employees.</li>
-                <li>Trained 15+ staff members on platform operation, achieving a <strong>30% boost in adoption and overall proficiency</strong>.</li>
-                <li>Collaborated with cross-functional remote teams to test features, log bugs, and recommend UX improvements based on field feedback.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 3: Web Development Intern 2023 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content">
-              <span class="timeline-date">Sep – Dec 2023</span>
-              <h3 class="timeline-role">Web Development Intern</h3>
-              <div class="timeline-company">LoGig LLC • Takoradi, Ghana</div>
-              <ul class="timeline-bullet-list">
-                <li>Developed responsive, mobile-first web user interfaces using HTML, CSS, and JavaScript.</li>
-                <li>Assisted in debugging and cross-browser testing to ensure seamless performance across major desktop and mobile platforms.</li>
-                <li>Contributed to front-end feature documentation, ensuring smoother knowledge transfer and code scalability.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 4: Web Development Intern 2022 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content">
-              <span class="timeline-date">Sep – Dec 2022</span>
-              <h3 class="timeline-role">Web Development Intern</h3>
-              <div class="timeline-company">LoGig LLC • Takoradi, Ghana</div>
-              <ul class="timeline-bullet-list">
-                <li>Built interactive web applications using JavaScript, HTML, and CSS, elevating overall user experience and web accessibility.</li>
-                <li>Partnered with senior software developers in an Agile setup, contributing consistently to project milestones.</li>
-                <li>Performed comprehensive application testing across devices, successfully reducing reported user bugs by 5%.</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section" style="background: var(--bg-secondary);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Portfolio Highlights</span>
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-description">Key software, mobile, and web products I have built and contributed to.</p>
-        </div>
-
-        <div class="projects-grid">
-          
-          <!-- Project 1: TreeSyt Mobile & E2E Testing -->
-          <div class="glass-card project-card">
-            <div class="project-banner">
-              <div class="project-banner-overlay"></div>
-              <i class="fa-solid fa-tree project-banner-icon"></i>
-            </div>
-            <div class="project-info">
-              <span class="project-type">Mobile Application</span>
-              <h3 class="project-title">TreeSyt Mobile Features & E2E Testing</h3>
-              <p class="project-desc">Built key mobile features and automated E2E test cases for both mobile and web platforms, ensuring high quality and reliability.</p>
-              <div class="project-tech">
-                <span class="tech-badge">Flutter</span>
-                <span class="tech-badge">Dart</span>
-                <span class="tech-badge">E2E Testing</span>
-                <span class="tech-badge">REST APIs</span>
-              </div>
-              <div class="project-actions">
-                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
-                  <i class="fa-solid fa-circle-info"></i> Project Details
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: Mobile Agent Onboarding App -->
-          <div class="glass-card project-card">
-            <div class="project-banner" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">
-              <div class="project-banner-overlay"></div>
-              <i class="fa-solid fa-user-plus project-banner-icon"></i>
-            </div>
-            <div class="project-info">
-              <span class="project-type">Mobile Application</span>
-              <h3 class="project-title">Agent Onboarding & Training App</h3>
-              <p class="project-desc">Mobile solution empowering HR and Agent Managers with candidate applications, interviewing pipelines, and digital agent training.</p>
-              <div class="project-tech">
-                <span class="tech-badge">Flutter</span>
-                <span class="tech-badge">SQLite</span>
-                <span class="tech-badge">UI/UX</span>
-                <span class="tech-badge">Workflow Automation</span>
-              </div>
-              <div class="project-actions">
-                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
-                  <i class="fa-solid fa-circle-info"></i> Project Details
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Mobile Issue Reporter & Flutter Web Admin -->
-          <div class="glass-card project-card">
-            <div class="project-banner" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
-              <div class="project-banner-overlay"></div>
-              <i class="fa-solid fa-bug project-banner-icon"></i>
-            </div>
-            <div class="project-info">
-              <span class="project-type">Flutter Web & Mobile</span>
-              <h3 class="project-title">Error Reporting System & Admin Web</h3>
-              <p class="project-desc">Built in-app error reporting history for mobile agents and a dedicated Flutter Web administrative dashboard to track & resolve issues.</p>
-              <div class="project-tech">
-                <span class="tech-badge">Flutter Web</span>
-                <span class="tech-badge">Dart</span>
-                <span class="tech-badge">API Integration</span>
-                <span class="tech-badge">Dashboard</span>
-              </div>
-              <div class="project-actions">
-                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
-                  <i class="fa-solid fa-circle-info"></i> Project Details
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: LoGig LLC Responsive Web Suite -->
-          <div class="glass-card project-card">
-            <div class="project-banner" style="background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);">
-              <div class="project-banner-overlay"></div>
-              <i class="fa-solid fa-laptop-code project-banner-icon"></i>
-            </div>
-            <div class="project-info">
-              <span class="project-type">Web Engineering</span>
-              <h3 class="project-title">Responsive Front-End Web Applications</h3>
-              <p class="project-desc">Developed mobile-first front-end web interfaces with optimized accessibility, cross-browser compatibility, and database retrieval.</p>
-              <div class="project-tech">
-                <span class="tech-badge">HTML5</span>
-                <span class="tech-badge">CSS3</span>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">MySQL</span>
-              </div>
-              <div class="project-actions">
-                <a href="#contact" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">
-                  <i class="fa-solid fa-circle-info"></i> Project Details
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Certifications Section -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Academic Credentials</span>
-          <h2 class="section-title">Education & Courses</h2>
-          <p class="section-description">Formal university degree and verified online certifications.</p>
-        </div>
-
-        <div class="education-grid">
-          
-          <!-- Edu 1: UMaT -->
-          <div class="glass-card edu-card">
-            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3 class="edu-title">BSc in Computer Science & Engineering</h3>
-            <div class="edu-institution">University of Mines and Technology (UMaT)</div>
-            <div class="edu-date"><i class="fa-solid fa-location-dot"></i> Takoradi, Ghana • Graduated</div>
-          </div>
-
-          <!-- Edu 2: Udemy Dart & Flutter -->
-          <div class="glass-card edu-card">
-            <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
-            <h3 class="edu-title">Dart & Flutter Development Course</h3>
-            <div class="edu-institution">Udemy Online Learning</div>
-            <div class="edu-date"><i class="fa-solid fa-clock"></i> Comprehensive Mobile Engineering</div>
-          </div>
-
-          <!-- Edu 3: Alison Diplomas -->
-          <div class="glass-card edu-card">
-            <div class="edu-icon"><i class="fa-solid fa-award"></i></div>
-            <h3 class="edu-title">Diploma in Product Management & Web Dev</h3>
-            <div class="edu-institution">Alison Online Courses</div>
-            <div class="edu-date"><i class="fa-solid fa-check-double"></i> Product Management & Web with HTML/CSS</div>
-          </div>
-
-          <!-- Edu 4: Senior High School -->
-          <div class="glass-card edu-card">
-            <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
-            <h3 class="edu-title">WASSCE Secondary Certificate</h3>
-            <div class="edu-institution">Baidoo Bonsoe Senior High Technical School</div>
-            <div class="edu-date"><i class="fa-solid fa-location-dot"></i> Ghana</div>
-          </div>
-
-        </div>
-
-        <!-- Leadership & References Subsection -->
-        <div style="margin-top: 70px;">
-          <div class="section-header" style="margin-bottom: 40px;">
-            <span class="section-subtitle">Leadership & Endorsements</span>
-            <h2 class="section-title">Leadership & Academic References</h2>
-          </div>
-
-          <div class="ref-grid">
-            <!-- Leadership Item -->
-            <div class="glass-card ref-card">
-              <div class="edu-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="fa-solid fa-hands-holding-child"></i></div>
-              <h3 class="ref-name">Campus Ministry Leadership</h3>
-              <div class="ref-title">Organizer (UMaT 2024/2025) & President (2020/2021)</div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">
-                Led community outreach, team organization, and event planning for the Church of Christ Campus Ministry at UMaT and Baidoo Bonsoe SHTS.
+              <h1 class="hero-role-title">Mobile &amp; UI/UX Engineer</h1>
+              <p class="hero-role-desc">
+                Designing and engineering digital products, offline-first Flutter apps, and AI-powered web systems that are clear, usable, and conversion focused.
               </p>
+
+              <div class="hero-cta-group">
+                <a href="#contact" class="pill-btn pill-btn-dark magnetic-btn">
+                  <span>Let's collaborate</span>
+                  <span class="arrow-ne">↗</span>
+                </a>
+                <a href="Emmanuel B. Addae CV.pdf" download class="pill-btn pill-btn-light magnetic-btn" title="Download PDF Curriculum Vitae">
+                  <i class="fa-regular fa-file-pdf"></i>
+                  <span>Resume CV</span>
+                </a>
+              </div>
+
+              <!-- Quick Impact Metrics Strip -->
+              <div class="hero-mini-metrics">
+                <div class="mini-metric">
+                  <strong>8+</strong>
+                  <span>Shipped Apps</span>
+                </div>
+                <div class="mini-metric-divider"></div>
+                <div class="mini-metric">
+                  <strong>30%</strong>
+                  <span>Adoption Boost</span>
+                </div>
+                <div class="mini-metric-divider"></div>
+                <div class="mini-metric">
+                  <strong>E2E</strong>
+                  <span>Mobile &amp; Web QA</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Ref 1: Engr Dr Albert K. Kwansah Ansah -->
-            <div class="glass-card ref-card">
-              <h3 class="ref-name">Engr Dr Albert K. Kwansah Ansah</h3>
-              <div class="ref-title">University of Mines and Technology, Ghana</div>
-              <div class="ref-contact-item">
-                <i class="fa-solid fa-envelope" style="color: var(--accent-secondary);"></i>
-                <span>afkansah@umat.edu.gh</span>
-              </div>
-              <div class="ref-contact-item">
-                <i class="fa-solid fa-phone" style="color: var(--accent-secondary);"></i>
-                <span>+233 24 951 8866</span>
+            <!-- Center Column: Cutout Portrait Overlapping Giant Headline -->
+            <div class="hero-center-portrait" id="portraitContainer">
+              <div class="portrait-backdrop-glow"></div>
+              <div class="portrait-wrapper" id="portraitWrapper">
+                <!-- Base Editorial Monochrome Layer + Interactive Spotlight Color Layer -->
+                <img
+                  src="Me-cutout.png"
+                  onerror="this.onerror=null; this.src='Me.jpeg';"
+                  alt="Emmanuel Brenyah Addae — Mobile and Software Engineer"
+                  class="portrait-img portrait-base"
+                  draggable="false"
+                >
+                <img
+                  src="Me-cutout.png"
+                  onerror="this.onerror=null; this.src='Me.jpeg';"
+                  alt=""
+                  aria-hidden="true"
+                  class="portrait-img portrait-color-reveal"
+                  id="portraitColorLayer"
+                  draggable="false"
+                >
               </div>
             </div>
 
-            <!-- Ref 2: Dr Ezekiel Martey -->
-            <div class="glass-card ref-card">
-              <h3 class="ref-name">Dr Ezekiel Martey</h3>
-              <div class="ref-title">University of Mines and Technology, Ghana</div>
-              <div class="ref-contact-item">
-                <i class="fa-solid fa-envelope" style="color: var(--accent-secondary);"></i>
-                <span>Ezzy2win@hotmail.com</span>
+            <!-- Right Column: Floating Social & Platform Pill Stack (Dribbble Shot 1) -->
+            <div class="hero-right-socials reveal-up">
+              <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="social-pill magnetic-btn">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="social-pill magnetic-btn">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="Emmanuel B. Addae CV.pdf" download class="social-pill magnetic-btn">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>PDF Resume</span>
+              </a>
+              <a href="mailto:addaebemmanuel@gmail.com" class="social-pill magnetic-btn">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Email Me</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. /SELECTED WORK SECTION (Dribbble Shot 2 — Watermark + Filter Tabs + 2-Col Grid)
+         ====================================================================== -->
+    <section id="work" class="editorial-frame work-frame reveal-frame">
+      <div class="frame-inner">
+
+        <!-- Giant Watermark Header -->
+        <div class="watermark-header">
+          <span class="watermark-bg-text" aria-hidden="true">PORTFOLIO</span>
+          <h2 class="slash-section-title">/SELECTED WORK</h2>
+        </div>
+
+        <!-- Filter Tabs & View All Row -->
+        <div class="work-toolbar">
+          <div class="work-filter-tabs" role="tablist" aria-label="Filter projects by category">
+            <button class="work-tab active" data-work-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="work-tab" data-work-filter="real" role="tab" aria-selected="false">Real Project</button>
+            <button class="work-tab" data-work-filter="mobile" role="tab" aria-selected="false">Mobile &amp; Flutter</button>
+            <button class="work-tab" data-work-filter="ai-web" role="tab" aria-selected="false">AI &amp; Web Systems</button>
+          </div>
+
+          <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-outline magnetic-btn">
+            <span>View All Work</span>
+            <span class="arrow-ne">↗</span>
+          </a>
+        </div>
+
+        <!-- 2-Column Editorial Project Showcase Grid -->
+        <div class="work-showcase-grid" id="workGrid">
+
+          <!-- Project 1: TreeSyt Mobile Features & E2E Testing -->
+          <article class="work-card reveal-up" data-category="real mobile" data-project-id="treesyt">
+            <div class="work-preview-box theme-forest">
+              <span class="work-badge">REAL PROJECT</span>
+              <button class="work-hover-arrow" aria-label="View TreeSyt case study">↗</button>
+
+              <!-- Rich Multi-Screen Visual Mockup -->
+              <div class="mockup-stage mockup-split-stage">
+                <div class="device-phone phone-primary">
+                  <div class="phone-notch"></div>
+                  <div class="phone-ui">
+                    <div class="ui-top-bar">
+                      <span class="ui-pill-tag green">TreeSyt Field v2.4</span>
+                      <span class="ui-dot-status">Offline Sync</span>
+                    </div>
+                    <div class="ui-hero-title">Forestry &amp; Field Operations Engine</div>
+                    <div class="ui-metric-cards">
+                      <div class="ui-mini-stat">
+                        <small>Field Plots</small>
+                        <strong>1,420</strong>
+                      </div>
+                      <div class="ui-mini-stat">
+                        <small>E2E Pass</small>
+                        <strong>99.4%</strong>
+                      </div>
+                    </div>
+                    <div class="ui-progress-block">
+                      <div class="ui-bar-row"><span>GPS Plot Sync</span><b>100%</b></div>
+                      <div class="ui-bar-track"><div class="ui-bar-fill green" style="width: 92%"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="device-web-panel">
+                  <div class="web-panel-row">
+                    <span class="web-chip">E2E Test Suite</span>
+                    <span class="web-chip-pass">✓ 48 Passed</span>
+                  </div>
+                  <div class="web-chart-bars">
+                    <span style="height:45%"></span>
+                    <span style="height:70%"></span>
+                    <span style="height:60%"></span>
+                    <span style="height:92%"></span>
+                    <span style="height:100%"></span>
+                  </div>
+                  <div class="web-panel-caption">Offline-First Architecture &amp; Automated QA</div>
+                </div>
               </div>
-              <div class="ref-contact-item">
-                <i class="fa-solid fa-phone" style="color: var(--accent-secondary);"></i>
-                <span>+233 24 965 3242</span>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">TreeSyt — Offline-First Field App &amp; E2E Automation Suite</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Mobile &amp; QA</span>
+                <span class="meta-pill">Vitara Company Ltd</span>
+                <span class="meta-pill">Flutter &amp; Dart</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Zero Hunger Pro (AI Smart Farming Assistant) -->
+          <article class="work-card reveal-up" data-category="real mobile ai-web" data-project-id="zerohunger">
+            <div class="work-preview-box theme-emerald">
+              <span class="work-badge">REAL PROJECT</span>
+              <button class="work-hover-arrow" aria-label="View Zero Hunger Pro case study">↗</button>
+
+              <div class="mockup-stage mockup-trio-phones">
+                <div class="mini-phone p-left">
+                  <div class="mp-header">N-P-K Soil AI</div>
+                  <div class="mp-circle emerald">96%</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+                <div class="mini-phone p-center">
+                  <div class="mp-badge">SDG-2 AI Engine</div>
+                  <div class="mp-title">Zero Hunger Pro</div>
+                  <div class="mp-card">
+                    <small>Top Crop Match</small>
+                    <strong>Maize &amp; Cocoa</strong>
+                  </div>
+                  <div class="mp-tts-bar">🔊 English &amp; Twi Voice TTS</div>
+                </div>
+                <div class="mini-phone p-right">
+                  <div class="mp-header">Leaf Scanner</div>
+                  <div class="mp-scan-box">🌿 Neural</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">Zero Hunger Pro — AI-Powered Smart Farming &amp; Crop Pathology Assistant</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Flutter + Python ML</span>
+                <span class="meta-pill">Random Forest &amp; Vision</span>
+                <span class="meta-pill">English/Twi TTS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Agent Onboarding & Error Reporting Admin Portal -->
+          <article class="work-card reveal-up" data-category="real mobile ai-web" data-project-id="vitara-suite">
+            <div class="work-preview-box theme-obsidian">
+              <span class="work-badge">REAL PROJECT</span>
+              <button class="work-hover-arrow" aria-label="View Agent Onboarding & Error Portal case study">↗</button>
+
+              <div class="mockup-stage mockup-split-stage">
+                <div class="device-phone phone-primary dark-violet">
+                  <div class="phone-notch"></div>
+                  <div class="phone-ui">
+                    <div class="ui-top-bar">
+                      <span class="ui-pill-tag violet">Agent Pipeline</span>
+                      <span class="ui-dot-status">Live</span>
+                    </div>
+                    <div class="ui-hero-title">HR Onboarding &amp; Error Diagnostics</div>
+                    <div class="ui-metric-cards">
+                      <div class="ui-mini-stat">
+                        <small>Candidates</small>
+                        <strong>320+</strong>
+                      </div>
+                      <div class="ui-mini-stat">
+                        <small>Triage</small>
+                        <strong>Real-Time</strong>
+                      </div>
+                    </div>
+                    <div class="ui-progress-block">
+                      <div class="ui-bar-row"><span>Training Modules</span><b>100%</b></div>
+                      <div class="ui-bar-track"><div class="ui-bar-fill violet" style="width: 88%"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="device-web-panel">
+                  <div class="web-panel-row">
+                    <span class="web-chip">Flutter Web Admin</span>
+                    <span class="web-chip-pass">Active</span>
+                  </div>
+                  <div class="web-list-rows">
+                    <div class="w-row"><span class="w-dot red"></span><span>Sync Timeout Log #402</span><b>Resolved</b></div>
+                    <div class="w-row"><span class="w-dot amber"></span><span>GPS Permission Trace</span><b>Triaged</b></div>
+                    <div class="w-row"><span class="w-dot green"></span><span>Agent Cohort #14</span><b>Certified</b></div>
+                  </div>
+                  <div class="web-panel-caption">Diagnostic History &amp; HR Interview Pipeline</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">Agent Onboarding Mobile App &amp; Flutter Web Error Triage Console</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Flutter Web &amp; Mobile</span>
+                <span class="meta-pill">Vitara Company Ltd</span>
+                <span class="meta-pill">SQLite &amp; REST</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: KekeGo Ghana (Smart Ride-Hailing Platform) -->
+          <article class="work-card reveal-up" data-category="real mobile" data-project-id="kekego">
+            <div class="work-preview-box theme-amber">
+              <span class="work-badge">REAL PROJECT</span>
+              <button class="work-hover-arrow" aria-label="View KekeGo Ghana case study">↗</button>
+
+              <div class="mockup-stage mockup-trio-phones">
+                <div class="mini-phone p-left">
+                  <div class="mp-header">Pickup Map</div>
+                  <div class="mp-route-map">📍 Takoradi</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+                <div class="mini-phone p-center">
+                  <div class="mp-badge amber">Offline-Tolerant</div>
+                  <div class="mp-title">KekeGo Ghana</div>
+                  <div class="mp-card">
+                    <small>Estimated Fare</small>
+                    <strong>GH₵ 18.00 • 3 min</strong>
+                  </div>
+                  <div class="mp-tts-bar">🛺 Book a Keke. Ride Smarter.</div>
+                </div>
+                <div class="mini-phone p-right">
+                  <div class="mp-header">Sync Queue</div>
+                  <div class="mp-circle amber">Clean</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">KekeGo Ghana — Offline-Tolerant Ride-Hailing &amp; Mobility App</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Mobile App</span>
+                <span class="meta-pill">Clean Architecture</span>
+                <span class="meta-pill">Flutter &amp; Firebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: HarvestGo (3-in-1 Grocery & Produce Ecosystem) -->
+          <article class="work-card reveal-up" data-category="mobile ai-web" data-project-id="harvestgo">
+            <div class="work-preview-box theme-sunrise">
+              <span class="work-badge badge-exploration">MULTI-TENANT MVP</span>
+              <button class="work-hover-arrow" aria-label="View HarvestGo case study">↗</button>
+
+              <div class="mockup-stage mockup-split-stage">
+                <div class="device-phone phone-primary warm-orange">
+                  <div class="phone-notch"></div>
+                  <div class="phone-ui">
+                    <div class="ui-top-bar">
+                      <span class="ui-pill-tag orange">HarvestGo</span>
+                      <span class="ui-dot-status">15m Delivery</span>
+                    </div>
+                    <div class="ui-hero-title">Fresh Produce Storefront &amp; Dispatch</div>
+                    <div class="ui-metric-cards">
+                      <div class="ui-mini-stat">
+                        <small>Apps in 1</small>
+                        <strong>3 Portals</strong>
+                      </div>
+                      <div class="ui-mini-stat">
+                        <small>Realtime</small>
+                        <strong>Firestore</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="device-web-panel">
+                  <div class="web-panel-row">
+                    <span class="web-chip">Vendor + Admin Console</span>
+                    <span class="web-chip-pass">Unified Codebase</span>
+                  </div>
+                  <div class="web-list-rows">
+                    <div class="w-row"><span class="w-dot green"></span><span>Customer Storefront</span><b>iOS / Android</b></div>
+                    <div class="w-row"><span class="w-dot amber"></span><span>Vendor Partner Portal</span><b>Inventory</b></div>
+                    <div class="w-row"><span class="w-dot green"></span><span>Admin Ops Console</span><b>Dispatch</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">HarvestGo — 3-in-1 Hyper-Local Grocery Storefront, Vendor &amp; Admin Suite</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Customer + Vendor + Admin</span>
+                <span class="meta-pill">Flutter Multi-Platform</span>
+                <span class="meta-pill">Firebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: MyStoreManagement (Offline-First Retail POS & Inventory) -->
+          <article class="work-card reveal-up" data-category="real mobile ai-web" data-project-id="mystore">
+            <div class="work-preview-box theme-royal">
+              <span class="work-badge">REAL PROJECT</span>
+              <button class="work-hover-arrow" aria-label="View MyStoreManagement case study">↗</button>
+
+              <div class="mockup-stage mockup-trio-phones">
+                <div class="mini-phone p-left">
+                  <div class="mp-header">Barcode Scan</div>
+                  <div class="mp-scan-box">||||| SKU</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+                <div class="mini-phone p-center">
+                  <div class="mp-badge blue">Hive Local DB</div>
+                  <div class="mp-title">MyStore POS</div>
+                  <div class="mp-card">
+                    <small>Daily Net Sales</small>
+                    <strong>100% Offline Ready</strong>
+                  </div>
+                  <div class="mp-tts-bar">📊 Excel &amp; Google Sheets Backup</div>
+                </div>
+                <div class="mini-phone p-right">
+                  <div class="mp-header">Stock Alerts</div>
+                  <div class="mp-circle blue">POS</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">MyStoreManagement — Offline-First Retail Inventory, Barcode &amp; Sales POS</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Retail POS</span>
+                <span class="meta-pill">Hive Offline DB</span>
+                <span class="meta-pill">Excel &amp; Sheets Sync</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: OJ Studios MinistryHub -->
+          <article class="work-card reveal-up" data-category="real mobile" data-project-id="ministryhub">
+            <div class="work-preview-box theme-crimson">
+              <span class="work-badge">REAL PROJECT</span>
+              <button class="work-hover-arrow" aria-label="View OJ Studios MinistryHub case study">↗</button>
+
+              <div class="mockup-stage mockup-trio-phones">
+                <div class="mini-phone p-left">
+                  <div class="mp-header">Devotionals</div>
+                  <div class="mp-circle crimson">🔥 21d</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+                <div class="mini-phone p-center">
+                  <div class="mp-badge crimson">Riverpod + GoRouter</div>
+                  <div class="mp-title">OJ MinistryHub</div>
+                  <div class="mp-card">
+                    <small>Community &amp; Courses</small>
+                    <strong>Sermons &amp; Streaks</strong>
+                  </div>
+                  <div class="mp-tts-bar">⛪ Role-Based Leader Moderation</div>
+                </div>
+                <div class="mini-phone p-right">
+                  <div class="mp-header">Prayer Wall</div>
+                  <div class="mp-scan-box">🙏 Live</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">OJ Studios MinistryHub — Digital Learning, Sermons &amp; Community Platform</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Mobile &amp; Web</span>
+                <span class="meta-pill">Flutter &amp; Riverpod</span>
+                <span class="meta-pill">Firebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: COC Hymns Player & LoGig Web Suite -->
+          <article class="work-card reveal-up" data-category="mobile ai-web" data-project-id="hymns-logig">
+            <div class="work-preview-box theme-plum">
+              <span class="work-badge badge-exploration">BILINGUAL AUDIO APP</span>
+              <button class="work-hover-arrow" aria-label="View COC Hymns Player case study">↗</button>
+
+              <div class="mockup-stage mockup-trio-phones">
+                <div class="mini-phone p-left">
+                  <div class="mp-header">English / Twi</div>
+                  <div class="mp-circle violet">🎵 A/T</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+                <div class="mini-phone p-center">
+                  <div class="mp-badge">Audio Service</div>
+                  <div class="mp-title">COC Hymns Player</div>
+                  <div class="mp-card">
+                    <small>Background Audio</small>
+                    <strong>Hymnal &amp; Choruses</strong>
+                  </div>
+                  <div class="mp-tts-bar">🎧 Offline Lyrics + YouTube Stream</div>
+                </div>
+                <div class="mini-phone p-right">
+                  <div class="mp-header">Favorites</div>
+                  <div class="mp-scan-box">❤️ Sync</div>
+                  <div class="mp-lines"><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-card-body">
+              <h3 class="work-card-title">COC Hymns Player — Bilingual English &amp; Twi Audio Worship Application</h3>
+              <div class="work-card-pills">
+                <span class="meta-pill">Audio Streaming</span>
+                <span class="meta-pill">Flutter &amp; Dart</span>
+                <span class="meta-pill">Bilingual UX</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. /SERVICE SECTION (Dribbble Shot 3 — Expandable Dark Showcase Accordion)
+         ====================================================================== -->
+    <section id="service" class="editorial-frame service-frame reveal-frame">
+      <div class="frame-inner">
+
+        <div class="service-header-row">
+          <h2 class="slash-section-title">/SERVICE</h2>
+          <p class="service-header-note">Click or hover any capability to inspect deliverables</p>
+        </div>
+
+        <div class="service-accordion" id="serviceAccordion">
+
+          <!-- Service Item 1 (Active by default like Dribbble Shot 3) -->
+          <div class="service-item active" data-service-index="0">
+            <div class="service-bar" role="button" tabindex="0" aria-expanded="true">
+              <div class="service-bar-left">
+                <h3 class="service-title">FLUTTER &amp; MOBILE ENGINEERING</h3>
+                <p class="service-desc">
+                  Engineering clear, offline-first, and scalable cross-platform mobile applications for iOS, Android, and field operations with SQLite, Hive, and REST APIs.
+                </p>
+                <div class="service-Subpills">
+                  <span>Flutter &amp; Dart</span>
+                  <span>Offline-First Sync</span>
+                  <span>Clean Architecture</span>
+                  <span>State Management</span>
+                </div>
+              </div>
+
+              <!-- Tilted Floating 3-Phone Mockup Card (Dribbble Shot 3) -->
+              <div class="service-floating-card" aria-hidden="true">
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-Orb blue"></div>
+                  <div class="sfc-grid"><span></span><span></span><span></span><span></span></div>
+                </div>
+                <div class="sfc-screen center">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-Orb indigo"></div>
+                  <div class="sfc-caption">Offline-First Flutter UI</div>
+                </div>
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-card-mini orange"></div>
+                  <div class="sfc-card-mini green"></div>
+                </div>
+              </div>
+
+              <div class="service-action-icon">
+                <span class="icon-close">✕</span>
+                <span class="icon-open">↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Item 2 -->
+          <div class="service-item" data-service-index="1">
+            <div class="service-bar" role="button" tabindex="0" aria-expanded="false">
+              <div class="service-bar-left">
+                <h3 class="service-title">WEB DESIGN &amp; FULL-STACK DEV</h3>
+                <p class="service-desc">
+                  Building responsive web applications, Flutter Web administrative dashboards, and high-converting front-end interfaces backed by MySQL, Firebase, and Python APIs.
+                </p>
+                <div class="service-Subpills">
+                  <span>HTML5 / CSS3 / JS</span>
+                  <span>Flutter Web Portals</span>
+                  <span>MySQL &amp; Firebase</span>
+                  <span>Responsive Dashboards</span>
+                </div>
+              </div>
+
+              <div class="service-floating-card" aria-hidden="true">
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-card-mini indigo"></div>
+                  <div class="sfc-grid"><span></span><span></span></div>
+                </div>
+                <div class="sfc-screen center">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-Orb emerald"></div>
+                  <div class="sfc-caption">Admin Web Console</div>
+                </div>
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-card-mini green"></div>
+                  <div class="sfc-card-mini blue"></div>
+                </div>
+              </div>
+
+              <div class="service-action-icon">
+                <span class="icon-close">✕</span>
+                <span class="icon-open">↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Item 3 -->
+          <div class="service-item" data-service-index="2">
+            <div class="service-bar" role="button" tabindex="0" aria-expanded="false">
+              <div class="service-bar-left">
+                <h3 class="service-title">UI/UX DESIGN &amp; PRODUCT STRATEGY</h3>
+                <p class="service-desc">
+                  Designing intuitive interfaces, writing comprehensive PRDs &amp; user guides, and leading staff onboarding that drove a 30% boost in platform adoption.
+                </p>
+                <div class="service-Subpills">
+                  <span>Design Systems</span>
+                  <span>PRDs &amp; User Guides</span>
+                  <span>User Onboarding</span>
+                  <span>Agile &amp; Miro / Jira</span>
+                </div>
+              </div>
+
+              <div class="service-floating-card" aria-hidden="true">
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-Orb orange"></div>
+                  <div class="sfc-grid"><span></span><span></span></div>
+                </div>
+                <div class="sfc-screen center">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-Orb crimson"></div>
+                  <div class="sfc-caption">+30% User Adoption</div>
+                </div>
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-card-mini indigo"></div>
+                  <div class="sfc-card-mini orange"></div>
+                </div>
+              </div>
+
+              <div class="service-action-icon">
+                <span class="icon-close">✕</span>
+                <span class="icon-open">↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Item 4 -->
+          <div class="service-item" data-service-index="3">
+            <div class="service-bar" role="button" tabindex="0" aria-expanded="false">
+              <div class="service-bar-left">
+                <h3 class="service-title">E2E TESTING &amp; AI INTEGRATION</h3>
+                <p class="service-desc">
+                  Guaranteeing production reliability with automated End-to-End (E2E) test suites, in-app diagnostic error reporting, and AI/ML model integration.
+                </p>
+                <div class="service-Subpills">
+                  <span>Automated E2E QA</span>
+                  <span>Error Telemetry</span>
+                  <span>AI / ML Endpoints</span>
+                  <span>Bilingual TTS</span>
+                </div>
+              </div>
+
+              <div class="service-floating-card" aria-hidden="true">
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-card-mini green"></div>
+                  <div class="sfc-grid"><span></span><span></span></div>
+                </div>
+                <div class="sfc-screen center">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-Orb blue"></div>
+                  <div class="sfc-caption">99.4% E2E Stability</div>
+                </div>
+                <div class="sfc-screen">
+                  <div class="sfc-bar"></div>
+                  <div class="sfc-card-mini indigo"></div>
+                  <div class="sfc-card-mini green"></div>
+                </div>
+              </div>
+
+              <div class="service-action-icon">
+                <span class="icon-close">✕</span>
+                <span class="icon-open">↗</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. /EXPERIENCE SECTION (Dribbble Shot 4 — Dark Framed Container + Hover Preview Card)
+         ====================================================================== -->
+    <section id="experience" class="editorial-frame experience-dark-frame reveal-frame">
+      <div class="frame-inner">
+
+        <!-- Header with Giant Watermark -->
+        <div class="exp-header">
+          <span class="exp-watermark" aria-hidden="true">EXPERIENCE</span>
+          <h2 class="slash-section-title light-text">/EXPERIENCE</h2>
+          <span class="exp-years-label">4+ years of shipping &amp; engineering impact</span>
+        </div>
+
+        <!-- Experience Rows List (Dribbble Shot 4) -->
+        <div class="exp-list" id="experienceList">
+
+          <!-- Experience Row 1 -->
+          <div class="exp-row active" tabindex="0">
+            <div class="exp-row-main">
+              <div class="exp-company-block">
+                <h3 class="exp-company">Vitara Company Ltd</h3>
+                <div class="exp-role">Associate Mobile Developer (National Service • Wa, Ghana)</div>
+              </div>
+
+              <!-- Floating Tilted Preview Card (Dribbble Shot 4 Signature Element) -->
+              <div class="exp-hover-preview" aria-hidden="true">
+                <div class="ehp-phone">
+                  <span class="ehp-tag">TreeSyt</span>
+                  <div class="ehp-bars"><i style="height:55%"></i><i style="height:85%"></i><i style="height:70%"></i><i style="height:95%"></i></div>
+                </div>
+                <div class="ehp-phone center">
+                  <span class="ehp-tag dark">Agent App</span>
+                  <div class="ehp-box"></div>
+                </div>
+                <div class="ehp-phone">
+                  <span class="ehp-tag">Admin Web</span>
+                  <div class="ehp-lines"><b></b><b></b></div>
+                </div>
+              </div>
+
+              <div class="exp-date">Oct 2025 - Oct 2026</div>
+            </div>
+
+            <ul class="exp-details">
+              <li>Built and deployed core mobile features for <strong>TreeSyt</strong> using offline-first Flutter architecture, improving field responsiveness and sync reliability.</li>
+              <li>Created and executed comprehensive <strong>End-to-End (E2E) automated test suites</strong> across Mobile and Web platforms to guarantee workflow stability.</li>
+              <li>Architected and shipped a dedicated <strong>Mobile Agent Onboarding Application</strong> for HR and Agent Managers with candidate tracking, interviewing pipelines, and digital training.</li>
+              <li>Designed an in-app <strong>Error Reporting History</strong> module and engineered its companion <strong>Flutter Web Administrative Dashboard</strong> to triage field bugs in real time.</li>
+            </ul>
+          </div>
+
+          <!-- Experience Row 2 -->
+          <div class="exp-row" tabindex="0">
+            <div class="exp-row-main">
+              <div class="exp-company-block">
+                <h3 class="exp-company">Vitara Company Ltd</h3>
+                <div class="exp-role">Product Management Intern • Wa, Ghana</div>
+              </div>
+
+              <div class="exp-hover-preview" aria-hidden="true">
+                <div class="ehp-phone">
+                  <span class="ehp-tag">PRDs</span>
+                  <div class="ehp-lines"><b></b><b></b></div>
+                </div>
+                <div class="ehp-phone center">
+                  <span class="ehp-tag dark">+30% Adoption</span>
+                  <div class="ehp-bars"><i style="height:40%"></i><i style="height:75%"></i><i style="height:100%"></i></div>
+                </div>
+                <div class="ehp-phone">
+                  <span class="ehp-tag">UX QA</span>
+                  <div class="ehp-box"></div>
+                </div>
+              </div>
+
+              <div class="exp-date">Sep 2024 - Dec 2024</div>
+            </div>
+
+            <ul class="exp-details">
+              <li>Documented mobile and web module functionalities and authored comprehensive user guides, streamlining onboarding for new employees.</li>
+              <li>Trained <strong>15+ staff members</strong> on platform operations, achieving a <strong>30% boost in adoption and overall proficiency</strong>.</li>
+              <li>Collaborated with cross-functional remote engineering teams to test features, log defects in Jira, and recommend high-impact UX improvements.</li>
+            </ul>
+          </div>
+
+          <!-- Experience Row 3 -->
+          <div class="exp-row" tabindex="0">
+            <div class="exp-row-main">
+              <div class="exp-company-block">
+                <h3 class="exp-company">LoGig LLC</h3>
+                <div class="exp-role">Web Development Intern (Two Consecutive Tenures • Takoradi, Ghana)</div>
+              </div>
+
+              <div class="exp-hover-preview" aria-hidden="true">
+                <div class="ehp-phone">
+                  <span class="ehp-tag">HTML/CSS</span>
+                  <div class="ehp-box"></div>
+                </div>
+                <div class="ehp-phone center">
+                  <span class="ehp-tag dark">JS Web Apps</span>
+                  <div class="ehp-lines"><b></b><b></b></div>
+                </div>
+                <div class="ehp-phone">
+                  <span class="ehp-tag">-5% Bugs</span>
+                  <div class="ehp-bars"><i style="height:80%"></i><i style="height:60%"></i><i style="height:95%"></i></div>
+                </div>
+              </div>
+
+              <div class="exp-date">Sep 2022 - Dec 2023</div>
+            </div>
+
+            <ul class="exp-details">
+              <li>Developed responsive, mobile-first web user interfaces using HTML5, CSS3, and JavaScript across two internship cohorts (2022 &amp; 2023).</li>
+              <li>Partnered with senior software engineers in an Agile environment, performing cross-browser testing that reduced reported user bugs by <strong>5%</strong>.</li>
+              <li>Contributed to front-end feature documentation to accelerate team knowledge transfer and long-term maintainability.</li>
+            </ul>
+          </div>
+
+          <!-- Experience Row 4 -->
+          <div class="exp-row" tabindex="0">
+            <div class="exp-row-main">
+              <div class="exp-company-block">
+                <h3 class="exp-company">University of Mines &amp; Technology (UMaT)</h3>
+                <div class="exp-role">BSc Computer Science &amp; Engineering • Campus Leadership</div>
+              </div>
+
+              <div class="exp-hover-preview" aria-hidden="true">
+                <div class="ehp-phone">
+                  <span class="ehp-tag">BSc CSE</span>
+                  <div class="ehp-box"></div>
+                </div>
+                <div class="ehp-phone center">
+                  <span class="ehp-tag dark">UMaT</span>
+                  <div class="ehp-bars"><i style="height:70%"></i><i style="height:90%"></i><i style="height:100%"></i></div>
+                </div>
+                <div class="ehp-phone">
+                  <span class="ehp-tag">Leadership</span>
+                  <div class="ehp-lines"><b></b><b></b></div>
+                </div>
+              </div>
+
+              <div class="exp-date">Graduated • Takoradi</div>
+            </div>
+
+            <ul class="exp-details">
+              <li>Completed rigorous undergraduate training in Software Engineering, Data Structures &amp; Algorithms (C++), Relational Databases (MySQL/SQLite), and Mobile Computing.</li>
+              <li>Served as <strong>Organizer (UMaT 2024/2025)</strong> and <strong>President (2020/2021)</strong> for the Church of Christ Campus Ministry, leading community outreach and event execution.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. /SKILLS & CREDENTIALS SECTION (Technical Stack, Education & References)
+         ====================================================================== -->
+    <section id="credentials" class="editorial-frame credentials-frame reveal-frame">
+      <div class="frame-inner">
+
+        <div class="watermark-header">
+          <span class="watermark-bg-text" aria-hidden="true">CAPABILITIES</span>
+          <h2 class="slash-section-title">/SKILLS &amp; CREDENTIALS</h2>
+        </div>
+
+        <!-- Skill Category Filter Tabs -->
+        <div class="work-toolbar" style="margin-bottom: 32px;">
+          <div class="work-filter-tabs" role="tablist" aria-label="Filter technical skills">
+            <button class="skill-tab active" data-filter="all">All Stack</button>
+            <button class="skill-tab" data-filter="dev">Mobile &amp; Dev</button>
+            <button class="skill-tab" data-filter="db">Databases &amp; APIs</button>
+            <button class="skill-tab" data-filter="tools">Product &amp; Agile Tools</button>
+            <button class="skill-tab" data-filter="soft">Leadership &amp; Soft Skills</button>
+          </div>
+        </div>
+
+        <!-- Skills Bento Grid -->
+        <div class="skills-editorial-grid" id="skillsContainer">
+          <div class="skill-ed-card skill-card" data-category="dev">
+            <div class="sec-top">
+              <span class="sec-index">01</span>
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3>Dart &amp; Flutter</h3>
+            <p>Cross-platform iOS/Android mobile apps, custom UI widgets, Riverpod/Provider state management, and Flutter Web administrative consoles.</p>
+            <div class="sec-tags"><span>Flutter</span><span>Dart</span><span>Flutter Web</span><span>E2E QA</span></div>
+          </div>
+
+          <div class="skill-ed-card skill-card" data-category="dev">
+            <div class="sec-top">
+              <span class="sec-index">02</span>
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Web &amp; Systems (JS / C++)</h3>
+            <p>Responsive HTML5, CSS3, modern JavaScript interfaces, React/Vite front-ends, and C++ object-oriented data structures &amp; algorithms.</p>
+            <div class="sec-tags"><span>JavaScript</span><span>HTML5/CSS3</span><span>C++ OOP</span><span>Git/GitHub</span></div>
+          </div>
+
+          <div class="skill-ed-card skill-card" data-category="db">
+            <div class="sec-top">
+              <span class="sec-index">03</span>
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3>Databases &amp; Offline Sync</h3>
+            <p>Relational schema design and local-first mobile persistence using MySQL, SQLite, Hive NoSQL, and Cloud Firestore.</p>
+            <div class="sec-tags"><span>SQLite</span><span>MySQL</span><span>Hive DB</span><span>Firebase</span></div>
+          </div>
+
+          <div class="skill-ed-card skill-card" data-category="db">
+            <div class="sec-top">
+              <span class="sec-index">04</span>
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h3>REST APIs &amp; AI Endpoints</h3>
+            <p>Asynchronous HTTP client architecture, JSON serialization, Python ML backend integration, and bilingual Text-to-Speech (TTS).</p>
+            <div class="sec-tags"><span>REST APIs</span><span>JSON</span><span>Async/Await</span><span>AI / ML</span></div>
+          </div>
+
+          <div class="skill-ed-card skill-card" data-category="tools">
+            <div class="sec-top">
+              <span class="sec-index">05</span>
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h3>Product &amp; Agile Delivery</h3>
+            <p>PRD authoring, user onboarding guides, sprint tracking, and remote collaboration with Jira, Miro, Slack, Zoom, and Google Workspace.</p>
+            <div class="sec-tags"><span>Jira</span><span>Miro</span><span>Slack</span><span>MS Office</span></div>
+          </div>
+
+          <div class="skill-ed-card skill-card" data-category="soft">
+            <div class="sec-top">
+              <span class="sec-index">06</span>
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3>Leadership &amp; Collaboration</h3>
+            <p>Analytical problem-solving, staff training (15+ personnel mentored), cross-functional communication, adaptability, and team organization.</p>
+            <div class="sec-tags"><span>Problem Solving</span><span>Mentorship</span><span>Communication</span></div>
+          </div>
+        </div>
+
+        <!-- Academic Credentials & References Sub-Grid -->
+        <div class="credentials-split-grid">
+          <!-- Education Column -->
+          <div class="cred-box">
+            <div class="cred-box-header">
+              <span class="cred-kicker">/EDUCATION &amp; CERTIFICATIONS</span>
+            </div>
+            <div class="cred-list">
+              <div class="cred-row">
+                <div>
+                  <strong>BSc in Computer Science &amp; Engineering</strong>
+                  <span>University of Mines and Technology (UMaT) • Takoradi, Ghana</span>
+                </div>
+                <span class="cred-badge">Degree</span>
+              </div>
+              <div class="cred-row">
+                <div>
+                  <strong>Dart &amp; Flutter Development Course</strong>
+                  <span>Udemy Online Learning • Mobile Engineering</span>
+                </div>
+                <span class="cred-badge">Certified</span>
+              </div>
+              <div class="cred-row">
+                <div>
+                  <strong>Diploma in Product Management &amp; Web Dev</strong>
+                  <span>Alison Online Courses • Product &amp; HTML/CSS</span>
+                </div>
+                <span class="cred-badge">Diploma</span>
+              </div>
+              <div class="cred-row">
+                <div>
+                  <strong>WASSCE Secondary Certificate</strong>
+                  <span>Baidoo Bonsoe Senior High Technical School • Ghana</span>
+                </div>
+                <span class="cred-badge">WASSCE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic References & Leadership Column -->
+          <div class="cred-box">
+            <div class="cred-box-header">
+              <span class="cred-kicker">/LEADERSHIP &amp; ACADEMIC REFERENCES</span>
+            </div>
+            <div class="cred-list">
+              <div class="cred-row">
+                <div>
+                  <strong>Campus Ministry Organizer &amp; President</strong>
+                  <span>Church of Christ Campus Ministry • UMaT (2024/2025) &amp; Baidoo Bonsoe (2020/2021)</span>
+                </div>
+                <span class="cred-badge">Leader</span>
+              </div>
+              <div class="cred-row">
+                <div>
+                  <strong>Engr. Dr. Albert K. Kwansah Ansah</strong>
+                  <span>University of Mines and Technology (UMaT), Ghana</span>
+                  <small class="ref-links"><a href="mailto:afkansah@umat.edu.gh">afkansah@umat.edu.gh</a> • <a href="tel:+233249518866">+233 24 951 8866</a></small>
+                </div>
+                <span class="cred-badge">Reference</span>
+              </div>
+              <div class="cred-row">
+                <div>
+                  <strong>Dr. Ezekiel Martey</strong>
+                  <span>University of Mines and Technology (UMaT), Ghana</span>
+                  <small class="ref-links"><a href="mailto:Ezzy2win@hotmail.com">Ezzy2win@hotmail.com</a> • <a href="tel:+233249653242">+233 24 965 3242</a></small>
+                </div>
+                <span class="cred-badge">Reference</span>
               </div>
             </div>
           </div>
@@ -679,125 +1118,178 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section" style="background: var(--bg-secondary);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Get In Touch</span>
-          <h2 class="section-title">Let's Connect & Work Together</h2>
-          <p class="section-description">I am currently open for full-time software engineering roles, mobile developer opportunities, and contract projects.</p>
+    <!-- ======================================================================
+         6. HAVE A PROJECT IN MIND? — CONTACT & FOOTER (Dribbble Shot 5)
+         ====================================================================== -->
+    <section id="contact" class="editorial-frame contact-cta-frame reveal-frame">
+      <div class="frame-inner contact-cta-inner">
+
+        <!-- Centered Availability Badge -->
+        <div class="cta-center-stack">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for New Project</span>
+          </div>
+
+          <h2 class="cta-giant-title">HAVE A PROJECT IN MIND?</h2>
+
+          <p class="cta-subtitle">
+            Together, we can create something clear and impactful. Let's collaborate to bring your mobile apps, web platforms, and product ideas to life in a way that resonates with everyone.
+          </p>
+
+          <div class="cta-Main-actions">
+            <button type="button" class="pill-btn pill-btn-dark pill-btn-xl magnetic-btn" id="toggleContactFormBtn">
+              <span>Contact Me</span>
+              <span class="arrow-ne">↗</span>
+            </button>
+          </div>
         </div>
 
-        <div class="contact-grid">
-          <!-- Left: Contact Details -->
-          <div class="glass-card contact-info-card">
-            <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Contact Details</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem;">Feel free to reach out via phone, email, or social channels!</p>
+        <!-- Expandable / Interactive Contact Studio (Form + Direct Channels) -->
+        <div class="contact-studio-grid" id="contactStudio">
+          <div class="contact-direct-card">
+            <h3>Direct Channels &amp; Resumes</h3>
+            <p>Prefer instant outreach? Reach me directly via email, phone, or grab my latest CV below.</p>
 
-            <div class="contact-methods">
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="direct-channel-list">
+              <a href="mailto:addaebemmanuel@gmail.com" class="direct-channel-item">
+                <span class="dc-icon"><i class="fa-regular fa-envelope"></i></span>
                 <div>
-                  <div class="contact-label">Email</div>
-                  <a href="mailto:addaebemmanuel@gmail.com" class="contact-val">addaebemmanuel@gmail.com</a>
+                  <small>Email Address</small>
+                  <strong>addaebemmanuel@gmail.com</strong>
                 </div>
-              </div>
+                <span class="dc-arrow">↗</span>
+              </a>
 
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <a href="tel:+233593543427" class="direct-channel-item">
+                <span class="dc-icon"><i class="fa-solid fa-phone"></i></span>
                 <div>
-                  <div class="contact-label">Phone Numbers</div>
-                  <div class="contact-val">+233 59 354 3427</div>
-                  <div style="font-size: 0.85rem; color: var(--text-muted);">+233 24 253 7088</div>
+                  <small>Phone / WhatsApp (Ghana)</small>
+                  <strong>+233 59 354 3427 / +233 24 253 7088</strong>
                 </div>
-              </div>
+                <span class="dc-arrow">↗</span>
+              </a>
 
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="direct-channel-item no-link">
+                <span class="dc-icon"><i class="fa-solid fa-location-dot"></i></span>
                 <div>
-                  <div class="contact-label">LinkedIn Profile</div>
-                  <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="contact-val">Connect on LinkedIn</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                  <div class="contact-label">Location</div>
-                  <div class="contact-val">Takoradi, Ghana (Available Remote & On-site)</div>
+                  <small>Base Location</small>
+                  <strong>Takoradi &amp; Wa, Ghana (Remote &amp; On-Site Ready)</strong>
                 </div>
               </div>
             </div>
+
+            <div class="cv-download-row">
+              <a href="Emmanuel B. Addae CV.pdf" download class="pill-btn pill-btn-dark" style="flex:1; justify-content:center;">
+                <i class="fa-regular fa-file-pdf"></i>
+                <span>PDF CV</span>
+              </a>
+              <a href="Emmanuel_B_Addae_CV_Professional.docx" download class="pill-btn pill-btn-light" style="flex:1; justify-content:center;">
+                <i class="fa-regular fa-file-word"></i>
+                <span>DOCX CV</span>
+              </a>
+            </div>
           </div>
 
-          <!-- Right: Interactive Contact Form -->
-          <div class="glass-card contact-form-card">
-            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Send Me a Message</h3>
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" id="name" class="form-control" placeholder="e.g. John Doe" required>
+          <form class="contact-ed-form" id="contactForm">
+            <h3>Send a Direct Message</h3>
+            <div class="ed-form-row">
+              <div class="ed-field">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Jane Mensah" required>
               </div>
-
-              <div class="form-group">
-                <label for="email" class="form-label">Your Email</label>
-                <input type="email" id="email" class="form-control" placeholder="e.g. john@example.com" required>
+              <div class="ed-field">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" placeholder="jane@company.com" required>
               </div>
-
-              <div class="form-group">
-                <label for="subject" class="form-label">Subject</label>
-                <input type="text" id="subject" class="form-control" placeholder="e.g. Job Opportunity / Collaboration" required>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" class="form-control" placeholder="Write your message here..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
-              </button>
-            </form>
-          </div>
+            </div>
+            <div class="ed-field">
+              <label for="subject">Project or Role Subject</label>
+              <input type="text" id="subject" placeholder="Mobile App Project / Software Engineer Role" required>
+            </div>
+            <div class="ed-field">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell me about your timeline, goals, or team..." required></textarea>
+            </div>
+            <button type="submit" class="pill-btn pill-btn-dark" style="width: 100%; justify-content: center;">
+              <span>Send Message</span>
+              <span class="arrow-ne">↗</span>
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <a href="#home" class="logo">
-          <div class="logo-badge">EA</div>
-          <span>ADDEMMA</span>
-        </a>
+        <!-- Bottom Signature Identity & Social Pill Bar (Dribbble Shot 5) -->
+        <footer class="signature-pill-footer">
+          <a href="#home" class="identity-pill magnetic-btn">
+            <img src="Me.jpeg" alt="Emmanuel Addae" class="identity-avatar">
+            <span>Emmanuel Addae</span>
+          </a>
 
-        <div class="social-links">
-          <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
+          <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="footer-social-pill magnetic-btn">
             <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
           </a>
-          <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+
+          <a href="https://www.linkedin.com/in/emmanuel-addae-756894231" target="_blank" rel="noopener noreferrer" class="footer-social-pill magnetic-btn">
             <i class="fa-brands fa-linkedin-in"></i>
+            <span>LinkedIn</span>
           </a>
-          <a href="mailto:addaebemmanuel@gmail.com" class="social-icon" aria-label="Email Me">
-            <i class="fa-solid fa-envelope"></i>
+
+          <a href="Emmanuel B. Addae CV.pdf" download class="footer-social-pill magnetic-btn">
+            <i class="fa-regular fa-file-pdf"></i>
+            <span>Resume PDF</span>
           </a>
+
+          <a href="mailto:addaebemmanuel@gmail.com" class="footer-social-pill magnetic-btn">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Email</span>
+          </a>
+        </footer>
+
+        <div class="copyright-bar">
+          <span>&copy; <span id="currentYear"></span> Emmanuel Brenyah Addae (ADDEMMA). Crafted with precision.</span>
+          <a href="#home" class="back-top-inline">Back to top ↑</a>
         </div>
 
-        <p class="copyright">
-          &copy; <span id="currentYear"></span> Emmanuel Brenyah Addae. All rights reserved.
-        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ========================================================================
+       PROJECT CASE STUDY MODAL (Interactive Deep-Dive on Card Click)
+       ======================================================================== -->
+  <div class="case-modal-backdrop" id="caseModalBackdrop" aria-hidden="true">
+    <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+      <div class="case-modal-header">
+        <span class="work-badge" id="caseModalBadge">REAL PROJECT</span>
+        <button class="case-modal-close" id="caseModalClose" aria-label="Close project details">✕</button>
+      </div>
+      <div class="case-modal-body">
+        <h3 id="caseModalTitle">Project Title</h3>
+        <p class="case-modal-subtitle" id="caseModalSubtitle"></p>
+        <div class="case-modal-highlights" id="caseModalHighlights"></div>
+        <div class="case-modal-stack" id="caseModalStack"></div>
+      </div>
+      <div class="case-modal-footer">
+        <a href="#contact" class="pill-btn pill-btn-dark" id="caseModalInquire">
+          <span>Discuss Similar Project</span>
+          <span class="arrow-ne">↗</span>
+        </a>
+        <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-light">
+          <i class="fa-brands fa-github"></i>
+          <span>Explore on GitHub</span>
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
 
   <!-- Floating Back to Top Button -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!-- JavaScript Application File -->
+  <!-- Main Interactive Script -->
   <script src="script.js"></script>
 </body>
 </html>
