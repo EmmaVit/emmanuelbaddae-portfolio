@@ -1240,28 +1240,32 @@
 
           <form class="contact-ed-form" id="contactForm">
             <h3>Send a Direct Message</h3>
+            <!-- Anti-spam honeypot field -->
+            <input type="text" name="_honey" id="contactHoney" style="display: none;" tabindex="-1" autocomplete="off">
+
             <div class="ed-form-row">
               <div class="ed-field">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="Jane Mensah" required>
+                <input type="text" id="name" name="name" placeholder="Jane Mensah" required>
               </div>
               <div class="ed-field">
                 <label for="email">Your Email</label>
-                <input type="email" id="email" placeholder="jane@company.com" required>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required>
               </div>
             </div>
             <div class="ed-field">
               <label for="subject">Project or Role Subject</label>
-              <input type="text" id="subject" placeholder="Mobile App Project / Software Engineer Role" required>
+              <input type="text" id="subject" name="subject" placeholder="Mobile App Project / Software Engineer Role" required>
             </div>
             <div class="ed-field">
               <label for="message">Message</label>
-              <textarea id="message" rows="4" placeholder="Tell me about your timeline, goals, or team..." required></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="Tell me about your timeline, goals, or team..." required></textarea>
             </div>
-            <button type="submit" class="pill-btn pill-btn-dark" style="width: 100%; justify-content: center;">
+            <button type="submit" class="pill-btn pill-btn-dark" id="contactSubmitBtn" style="width: 100%; justify-content: center;">
               <span>Send Message</span>
               <span class="arrow-ne">↗</span>
             </button>
+            <div class="form-status-banner" id="contactFormStatus" role="status" aria-live="polite" hidden></div>
           </form>
         </div>
 

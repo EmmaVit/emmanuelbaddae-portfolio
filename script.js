@@ -562,8 +562,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    const contactFormStatus = document.getElementById('contactFormStatus');
+
+    const showFormStatus = (type, iconClass, text) => {
+      if (!contactFormStatus) return;
+      contactFormStatus.className = `form-status-banner is-${type}`;
+      contactFormStatus.textContent = '';
+      const iconEl = document.createElement('i');
+      iconEl.className = iconClass;
+      const spanEl = document.createElement('span');
+      spanEl.textContent = text;
+      contactFormStatus.append(iconEl, spanEl);
+      contactFormStatus.hidden = false;
+    };
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const honey = document.getElementById('contactHoney')?.value || '';
+      if (honey) return; // Silently drop automated bot submissions
+
       const name = document.getElementById('name')?.value.trim() || '';
       const email = document.getElementById('email')?.value.trim() || '';
       const subject = document.getElementById('subject')?.value.trim() || 'Portfolio Inquiry';
@@ -572,24 +590,71 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalHTML = submitBtn ? submitBtn.innerHTML : '';
 
+      if (contactFormStatus) {
+        contactFormStatus.hidden = true;
+      }
+
+      if (window.location.protocol === 'file:') {
+        showFormStatus(
+          'error',
+          'fa-solid fa-circle-info',
+          'Direct web email delivery requires opening the portfolio over http:// or https:// (such as localhost or GitHub Pages) instead of a local file:/// path.'
+        );
+        return;
+      }
+
       if (submitBtn) {
-        submitBtn.innerHTML = '<span>Opening Email Client...</span> <i class="fa-solid fa-check"></i>';
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Sending Message...</span>';
         submitBtn.disabled = true;
       }
 
-      const mailtoBody = encodeURIComponent(
-        `Hello Emmanuel,\n\nMy name is ${name} (${email}).\n\n${message}\n\nBest regards,\n${name}`
-      );
-      const mailtoUrl = `mailto:addaebemmanuel@gmail.com?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
-      window.location.href = mailtoUrl;
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/addaebemmanuel@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            _replyto: email,
+            _subject: `Portfolio Inquiry: ${subject}`,
+            subject,
+            message,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
 
-      setTimeout(() => {
-        contactForm.reset();
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && (data.success === true || data.success === 'true')) {
+          contactForm.reset();
+          showFormStatus(
+            'success',
+            'fa-solid fa-circle-check',
+            'Message sent directly! Thank you for reaching out — Emmanuel will reply to your email shortly.'
+          );
+        } else {
+          const apiMsg =
+            typeof data.message === 'string' && data.message.trim()
+              ? data.message
+              : 'Could not send message right now. Please try again in a moment.';
+          showFormStatus('error', 'fa-solid fa-triangle-exclamation', apiMsg);
+        }
+      } catch (err) {
+        showFormStatus(
+          'error',
+          'fa-solid fa-triangle-exclamation',
+          'Network error while sending your message. Please check your connection and try again.'
+        );
+      } finally {
         if (submitBtn) {
           submitBtn.innerHTML = originalHTML;
           submitBtn.disabled = false;
         }
-      }, 2500);
+      }
     });
   }
 
