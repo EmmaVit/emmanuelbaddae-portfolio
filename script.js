@@ -579,8 +579,8 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const honey = document.getElementById('contactHoney')?.value || '';
-      if (honey) return; // Silently drop automated bot submissions
+      const botcheck = document.getElementById('contactBotcheck');
+      if (botcheck && botcheck.checked) return; // Silently drop automated bot submissions
 
       const name = document.getElementById('name')?.value.trim() || '';
       const email = document.getElementById('email')?.value.trim() || '';
@@ -594,42 +594,34 @@ document.addEventListener('DOMContentLoaded', () => {
         contactFormStatus.hidden = true;
       }
 
-      if (window.location.protocol === 'file:') {
-        showFormStatus(
-          'error',
-          'fa-solid fa-circle-info',
-          'Direct web email delivery requires opening the portfolio over http:// or https:// (such as localhost or GitHub Pages) instead of a local file:/// path.'
-        );
-        return;
-      }
-
       if (submitBtn) {
         submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Sending Message...</span>';
         submitBtn.disabled = true;
       }
 
       try {
-        const response = await fetch('https://formsubmit.co/ajax/addaebemmanuel@gmail.com', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json'
           },
           body: JSON.stringify({
+            access_key: '496a4cef-1087-4cbb-bdb2-27e940377776',
+            from_name: name,
+            subject: `Portfolio Inquiry: ${subject}`,
+            replyto: email,
             name,
             email,
-            _replyto: email,
-            _subject: `Portfolio Inquiry: ${subject}`,
-            subject,
+            topic: subject,
             message,
-            _template: 'table',
-            _captcha: 'false'
+            botcheck: ''
           })
         });
 
         const data = await response.json().catch(() => ({}));
 
-        if (response.ok && (data.success === true || data.success === 'true')) {
+        if (response.ok && data.success) {
           contactForm.reset();
           showFormStatus(
             'success',
