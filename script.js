@@ -403,9 +403,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ==========================================================================
+     6B. ON-WEB CV PREVIEW & DOWNLOAD MODAL
+     ========================================================================== */
+  const cvModalBackdrop = document.getElementById('cvModalBackdrop');
+  const cvModalClose = document.getElementById('cvModalClose');
+  const cvModalIframe = document.getElementById('cvModalIframe');
+  const openCvTriggers = document.querySelectorAll('[data-open-cv-modal]');
+
+  function openCvModal() {
+    if (!cvModalBackdrop) return;
+    // Close mobile navigation drawer first if open
+    toggleMobileMenu(false);
+
+    // Lazy-load the embedded PDF iframe on first preview
+    if (cvModalIframe && !cvModalIframe.getAttribute('src')) {
+      const pdfSrc = cvModalIframe.getAttribute('data-src');
+      if (pdfSrc) cvModalIframe.setAttribute('src', pdfSrc);
+    }
+
+    cvModalBackdrop.classList.add('open');
+    cvModalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCvModal() {
+    if (!cvModalBackdrop) return;
+    cvModalBackdrop.classList.remove('open');
+    cvModalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openCvTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      // Allow Ctrl/Cmd/Middle-click to natively open the PDF preview in a new tab
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      openCvModal();
+    });
+  });
+
+  if (cvModalClose) {
+    cvModalClose.addEventListener('click', closeCvModal);
+  }
+
+  if (cvModalBackdrop) {
+    cvModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === cvModalBackdrop) closeCvModal();
+    });
+  }
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && caseModalBackdrop && caseModalBackdrop.classList.contains('open')) {
-      closeCaseModal();
+    if (e.key === 'Escape') {
+      if (caseModalBackdrop && caseModalBackdrop.classList.contains('open')) {
+        closeCaseModal();
+      }
+      if (cvModalBackdrop && cvModalBackdrop.classList.contains('open')) {
+        closeCvModal();
+      }
     }
   });
 

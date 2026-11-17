@@ -65,13 +65,13 @@
     </nav>
 
     <div class="drawer-footer">
-      <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-dark" style="width: 100%; justify-content: center;">
-        <span>Download PDF CV</span>
-        <i class="fa-solid fa-arrow-down"></i>
+      <a href="Emmanuel Brenyah Addae - CV.pdf" data-open-cv-modal class="pill-btn pill-btn-dark" style="width: 100%; justify-content: center;">
+        <i class="fa-regular fa-eye"></i>
+        <span>Preview CV</span>
       </a>
-      <a href="Emmanuel Brenyah Addae - CV.pdf" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-light" style="width: 100%; justify-content: center;">
-        <span>View CV</span>
-        <i class="fa-regular fa-file-pdf"></i>
+      <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-light" style="width: 100%; justify-content: center;">
+        <i class="fa-solid fa-arrow-down"></i>
+        <span>Download CV</span>
       </a>
     </div>
   </aside>
@@ -147,8 +147,8 @@
                   <span>Let's collaborate</span>
                   <span class="arrow-ne">↗</span>
                 </a>
-                <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-light magnetic-btn" title="Download PDF Curriculum Vitae">
-                  <i class="fa-regular fa-file-pdf"></i>
+                <a href="Emmanuel Brenyah Addae - CV.pdf" data-open-cv-modal class="pill-btn pill-btn-light magnetic-btn" title="Preview or Download Curriculum Vitae">
+                  <i class="fa-regular fa-eye"></i>
                   <span>Resume CV</span>
                 </a>
               </div>
@@ -206,7 +206,7 @@
                 <i class="fa-brands fa-linkedin-in"></i>
                 <span>LinkedIn</span>
               </a>
-              <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="social-pill magnetic-btn">
+              <a href="Emmanuel Brenyah Addae - CV.pdf" data-open-cv-modal class="social-pill magnetic-btn" title="Preview or Download CV">
                 <i class="fa-regular fa-file-lines"></i>
                 <span>PDF Resume</span>
               </a>
@@ -1227,13 +1227,13 @@
             </div>
 
             <div class="cv-download-row">
-              <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-dark" style="flex:1; justify-content:center;">
-                <i class="fa-regular fa-file-pdf"></i>
-                <span>Download CV</span>
+              <a href="Emmanuel Brenyah Addae - CV.pdf" data-open-cv-modal class="pill-btn pill-btn-dark" style="flex:1; justify-content:center;">
+                <i class="fa-regular fa-eye"></i>
+                <span>Preview CV</span>
               </a>
-              <a href="Emmanuel Brenyah Addae - CV.pdf" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-light" style="flex:1; justify-content:center;">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <span>View CV</span>
+              <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-light" style="flex:1; justify-content:center;">
+                <i class="fa-solid fa-arrow-down"></i>
+                <span>Download CV</span>
               </a>
             </div>
           </div>
@@ -1282,7 +1282,7 @@
             <span>LinkedIn</span>
           </a>
 
-          <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="footer-social-pill magnetic-btn">
+          <a href="Emmanuel Brenyah Addae - CV.pdf" data-open-cv-modal class="footer-social-pill magnetic-btn" title="Preview or Download CV">
             <i class="fa-regular fa-file-pdf"></i>
             <span>Resume PDF</span>
           </a>
@@ -1330,6 +1330,61 @@
         <a href="https://github.com/AddEmma" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-light">
           <i class="fa-brands fa-github"></i>
           <span>Explore on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CV WEB PREVIEW & DOWNLOAD MODAL
+       ======================================================================== -->
+  <div class="case-modal-backdrop cv-modal-backdrop" id="cvModalBackdrop" aria-hidden="true">
+    <div class="case-modal cv-modal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+      <div class="cv-modal-header">
+        <div class="cv-modal-title-group">
+          <span class="work-badge">CURRICULUM VITAE</span>
+          <h3 id="cvModalTitle">Emmanuel Brenyah Addae — CV</h3>
+        </div>
+        <div class="cv-modal-actions">
+          <a href="Emmanuel Brenyah Addae - CV.pdf" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-light cv-header-btn" title="Open full PDF in a new browser tab">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Full Preview</span>
+          </a>
+          <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-dark cv-header-btn" title="Download PDF file">
+            <i class="fa-solid fa-arrow-down"></i>
+            <span>Download</span>
+          </a>
+          <button class="case-modal-close" id="cvModalClose" aria-label="Close CV preview">✕</button>
+        </div>
+      </div>
+
+      <div class="cv-modal-viewer">
+        <!-- Interactive Native PDF Viewer (Desktop & Tablet) -->
+        <iframe
+          id="cvModalIframe"
+          data-src="Emmanuel Brenyah Addae - CV.pdf#view=FitH"
+          title="Emmanuel Brenyah Addae Curriculum Vitae Preview"
+          class="cv-pdf-iframe"
+        ></iframe>
+
+        <!-- Crisp High-DPI Paper Sheet Preview (Mobile Browsers where PDF iframes clip) -->
+        <div class="cv-mobile-sheet">
+          <img
+            src="cv-preview.png"
+            alt="Preview of Emmanuel Brenyah Addae Curriculum Vitae"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <div class="cv-modal-footer">
+        <a href="Emmanuel Brenyah Addae - CV.pdf" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-light" style="flex: 1; justify-content: center;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Preview in Tab</span>
+        </a>
+        <a href="Emmanuel Brenyah Addae - CV.pdf" download="Emmanuel Brenyah Addae - CV.pdf" class="pill-btn pill-btn-dark" style="flex: 1; justify-content: center;">
+          <i class="fa-solid fa-arrow-down"></i>
+          <span>Download PDF</span>
         </a>
       </div>
     </div>
