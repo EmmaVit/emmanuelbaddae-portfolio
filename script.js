@@ -234,11 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: 'REAL PROJECT • VITARA COMPANY LTD',
       title: 'TreeSyt — Offline-First Field App & E2E Automation Suite',
       subtitle:
-        'Enterprise forestry and field operations mobile platform engineered during my tenure as Associate Mobile Developer at Vitara Company Ltd in Wa, Ghana.',
+        'Enterprise forestry and field operations mobile platform engineered as Associate Mobile Developer at Vitara Company Ltd in Wa, Ghana (retained full-time after National Service).',
       highlights: [
         'Engineered core offline-first mobile modules in Flutter & Dart, enabling field officers to capture GPS plots and sync seamlessly in low-connectivity zones.',
         'Authored and executed comprehensive End-to-End (E2E) automated test suites across Mobile and Web to prevent regressions and guarantee release stability.',
-        'Collaborated with product and backend engineering teams to streamline sync queues and reduce field latency.'
+        'Retained full-time on the mobile team (Oct 2026 – Present) to continue shipping and maintaining offline-first Flutter features.'
       ],
       stack: ['Flutter', 'Dart', 'SQLite Offline Sync', 'E2E Automated Testing', 'REST APIs', 'Git / Jira']
     },
@@ -303,28 +303,30 @@ document.addEventListener('DOMContentLoaded', () => {
       stack: ['Flutter', 'Dart', 'Hive Local DB', 'Barcode Scanner', 'Excel & Google Sheets API']
     },
     ministryhub: {
-      badge: 'REAL PROJECT • COMMUNITY PLATFORM',
+      badge: 'LIVE ON GOOGLE PLAY • COMMUNITY PLATFORM',
       title: 'OJ Studios MinistryHub — Digital Learning, Sermons & Community Platform',
       subtitle:
-        'Full-featured faith and digital learning ecosystem built with Flutter, Riverpod, GoRouter, and Firebase for structured courses and community engagement.',
+        'Published production mobile ecosystem on Google Play built with Flutter, Riverpod, GoRouter, and Firebase for structured courses and community engagement.',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ojstudios.app',
       highlights: [
-        'Features daily devotional streaks, audio/video sermon streaming, interactive Bible study courses, and a moderated prayer wall.',
+        'Published on Google Play featuring daily devotional streaks, audio/video sermon streaming, interactive study courses, and a moderated prayer wall.',
         'Role-based access control allowing ministry leaders to publish content, review submissions, and manage announcements.',
         'Engineered with reactive Riverpod state management and declarative GoRouter deep linking.'
       ],
-      stack: ['Flutter', 'Riverpod', 'GoRouter', 'Firebase Auth & Firestore', 'Media Streaming']
+      stack: ['Flutter', 'Google Play', 'Riverpod', 'GoRouter', 'Firebase Auth & Firestore', 'Media Streaming']
     },
     'hymns-logig': {
-      badge: 'BILINGUAL AUDIO APP • HERITAGE UX',
+      badge: 'LIVE ON GOOGLE PLAY • BILINGUAL AUDIO APP',
       title: 'COC Hymns Player — Bilingual English & Twi Audio Worship Application',
       subtitle:
-        'Cross-platform digital hymnal and background audio player supporting side-by-side English and Twi lyrics, offline search, and curated streams.',
+        'Published Google Play digital hymnal and background audio player supporting side-by-side English and Twi lyrics, offline search, and curated streams.',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=addemma.coc_music_player',
       highlights: [
-        'Instant bilingual switching between English and Twi hymn lyrics with adjustable typography and dark worship mode.',
+        'Published on Google Play with instant bilingual switching between English and Twi hymn lyrics, adjustable typography, and dark worship mode.',
         'Background audio playback and YouTube/audio stream integration with persistent favorites and custom service playlists.',
-        'Built with clean, accessible UI patterns honed during my web & mobile engineering tenures.'
+        'Built with clean, offline-ready UI patterns for seamless playback and search.'
       ],
-      stack: ['Flutter', 'Dart', 'Background Audio Service', 'Bilingual Search', 'Local Persistence']
+      stack: ['Flutter', 'Google Play', 'Dart', 'Background Audio Service', 'Bilingual Search', 'Local Persistence']
     }
   };
 
@@ -336,6 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const caseModalHighlights = document.getElementById('caseModalHighlights');
   const caseModalStack = document.getElementById('caseModalStack');
   const caseModalInquire = document.getElementById('caseModalInquire');
+  const caseModalPlayLink = document.getElementById('caseModalPlayLink');
 
   function openCaseModal(projectId) {
     const data = projectCaseStudies[projectId];
@@ -344,6 +347,15 @@ document.addEventListener('DOMContentLoaded', () => {
     caseModalBadge.textContent = data.badge;
     caseModalTitle.textContent = data.title;
     caseModalSubtitle.textContent = data.subtitle;
+
+    if (caseModalPlayLink) {
+      if (data.playStoreUrl) {
+        caseModalPlayLink.href = data.playStoreUrl;
+        caseModalPlayLink.style.display = 'inline-flex';
+      } else {
+        caseModalPlayLink.style.display = 'none';
+      }
+    }
 
     caseModalHighlights.innerHTML = data.highlights
       .map(
