@@ -138,9 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const typedTextSpan = document.getElementById('typedText');
   const roles = [
     'Flutter & Mobile Engineer',
-    'UI/UX & Product Engineer',
+    'Offline-First App Developer',
     'Full-Stack Web Developer',
-    'E2E QA & Systems Architect'
+    'Mobile & Web E2E QA'
   ];
   let roleIdx = 0;
   let charIdx = roles[0].length;
@@ -228,105 +228,213 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Case Study Deep-Dive Data for All 8 Projects
+  // Case Study Deep-Dive Data & Real Screenshot Galleries for All 8 Projects
   const projectCaseStudies = {
     treesyt: {
-      badge: 'REAL PROJECT • VITARA COMPANY LTD',
-      title: 'TreeSyt — Offline-First Field App & E2E Automation Suite',
+      badge: 'VITARA COMPANY LTD • PRODUCTION',
+      title: 'TreeSyt — Offline-First Field Operations App & E2E QA',
       subtitle:
-        'Enterprise forestry and field operations mobile platform engineered as Associate Mobile Developer at Vitara Company Ltd in Wa, Ghana (retained full-time after National Service).',
-      highlights: [
-        'Engineered core offline-first mobile modules in Flutter & Dart, enabling field officers to capture GPS plots and sync seamlessly in low-connectivity zones.',
-        'Authored and executed comprehensive End-to-End (E2E) automated test suites across Mobile and Web to prevent regressions and guarantee release stability.',
-        'Retained full-time on the mobile team (Oct 2026 – Present) to continue shipping and maintaining offline-first Flutter features.'
+        'Production agricultural and field operations mobile platform engineered at Vitara Company Ltd in Wa, Ghana (retained full-time after completing National Service).',
+      screens: [
+        {
+          src: 'assets/projects/treesyt-home.webp',
+          caption: 'Field Agent Home — Budget, Purchases, Warehouse, Profiling & Green Tracker'
+        }
       ],
-      stack: ['Flutter', 'Dart', 'SQLite Offline Sync', 'E2E Automated Testing', 'REST APIs', 'Git / Jira']
+      highlights: [
+        'Built and shipped core offline-first mobile features in Flutter & Dart across field modules including Weekly Budget, Purchases, Warehouse Activity, Farmer Profiling, Green Tracker, Farmer Support, Forms, and Trainings.',
+        'Contributed to Mobile and Web End-to-End (E2E) test cases across feature workflows to catch regressions before release.',
+        'Retained full-time on the mobile engineering team (Oct 2026 – Present) after completing National Service to continue building and maintaining offline-first Flutter workflows.'
+      ],
+      stack: ['Flutter', 'Dart', 'Offline-First SQLite', 'Mobile & Web E2E QA', 'REST APIs', 'Git / Jira']
     },
     zerohunger: {
-      badge: 'REAL PROJECT • AI & AGRITECH',
-      title: 'Zero Hunger Pro — AI-Powered Smart Farming & Crop Pathology Assistant',
+      badge: 'AI & AGRITECH',
+      title: 'Zero Hunger Pro — Multimodal Smart Farming & Crop Pathology App',
       subtitle:
-        'End-to-end SDG-2 smart agriculture ecosystem combining a Flutter mobile app with a Python machine learning backend (Random Forest & Computer Vision).',
-      highlights: [
-        'Predicts optimal crop suitability from soil N-P-K, pH, rainfall, and live weather telemetry using a trained Random Forest classifier.',
-        'Scans plant leaves via device camera to diagnose 38+ crop diseases with organic & chemical treatment action plans.',
-        'Features offline bilingual Text-to-Speech (TTS) in English and Twi so local Ghanaian farmers can listen to agronomic guidance hands-free.'
+        'Smart agriculture mobile application pairing Flutter with cloud AI vision, Open-Meteo weather telemetry, multilingual voice guidance, and local data encryption.',
+      screens: [
+        {
+          src: 'assets/projects/zerohunger-dashboard.webp',
+          caption: 'Farm Dashboard — Farm Health Score & Open-Meteo Live Weather'
+        },
+        {
+          src: 'assets/projects/zerohunger-lens.webp',
+          caption: 'AgroSense AI Lens — Multimodal Camera, GPS Lock & Climate Fusion'
+        },
+        {
+          src: 'assets/projects/zerohunger-settings.webp',
+          caption: 'Settings — 5-Language Voice TTS & Ghana Act 843 Local Encryption'
+        }
       ],
-      stack: ['Flutter & Dart', 'Python ML', 'Random Forest', 'Computer Vision', 'English & Twi TTS', 'Open-Meteo API']
+      highlights: [
+        'Built AgroSense AI Lens — a unified multimodal camera screen (Auto-Detect, Soil & Crops, Leaf Scanner) that fuses camera frames, GPS coordinates, and local climate data.',
+        'Integrates Open-Meteo live weather telemetry (temperature, humidity, rainfall, UV index) alongside Farm Health Score monitoring and scan history.',
+        'Supports Voice Text-to-Speech in 5 Ghanaian & local languages (English, Twi, Ga, Fante, and Hausa) with Ghana Act 843 local encryption for farm GPS and location data.'
+      ],
+      stack: ['Flutter & Dart', 'Python ML Backend', 'Multimodal Camera AI', 'Open-Meteo API', '5-Language Voice TTS', 'Act 843 Encryption']
     },
     'vitara-suite': {
-      badge: 'REAL PROJECT • VITARA COMPANY LTD',
-      title: 'Agent Onboarding Mobile App & Flutter Web Error Triage Console',
+      badge: 'VITARA COMPANY LTD • INTERNAL SUITE',
+      title: 'TreeSyt Agent Onboarding App & Mobile Error Triage Portal',
       subtitle:
-        'Dual-platform internal operations suite built for HR managers, agent supervisors, and engineering QA teams at Vitara Company Ltd.',
-      highlights: [
-        'Built a dedicated Mobile Agent Onboarding Application managing candidate pipelines, structured interview scoring, and interactive training verification.',
-        'Designed an in-app Error Reporting History module that captures device state, stack traces, and sync logs when field exceptions occur.',
-        'Developed the companion Flutter Web Administrative Dashboard for real-time bug triage, filtering, and resolution tracking.'
+        'Internal mobile and web tools built for Vitara Company Ltd to streamline Field Agent recruitment and triage field-reported mobile issues.',
+      screens: [
+        {
+          src: 'assets/projects/onboarding-welcome.webp',
+          caption: 'Onboarding Welcome — Join the TreeSyt Field Agent Network'
+        },
+        {
+          src: 'assets/projects/onboarding-journey.webp',
+          caption: '5-Step Application Journey — Document Upload, Biometric Match & Voice Interview'
+        },
+        {
+          src: 'assets/projects/onboarding-next.webp',
+          caption: 'Post-Submission Timeline — HR Review, AI Voice Interview Invite & Decision'
+        },
+        {
+          src: 'assets/projects/onboarding-form.webp',
+          caption: 'Step 1 of 4 — Personal Information Form with Ghana (+233) Input'
+        }
       ],
-      stack: ['Flutter Mobile', 'Flutter Web', 'Dart', 'SQLite', 'REST APIs', 'Diagnostic Telemetry']
+      highlights: [
+        'Contributed to the Field Agent Onboarding mobile app covering a 4-step Personal Information form, Document Upload (Government ID, CV, cover letter, guarantor info), AI biometric face & ID match, and live AI voice interview invitations.',
+        'Built an in-app Error Reporting History feature enabling field agents to submit mobile issue reports directly from their devices.',
+        'Built the companion Flutter Web Administrative Portal for the Mobile Team to review, track, and triage reported issues coming in from the field.'
+      ],
+      stack: ['Flutter Mobile', 'Flutter Web', 'Dart', 'REST APIs', 'Document & KYC Flows', 'Error Telemetry']
     },
     kekego: {
-      badge: 'REAL PROJECT • URBAN MOBILITY',
-      title: 'KekeGo Ghana — Offline-Tolerant Ride-Hailing & Mobility App',
+      badge: 'MOBILITY APP',
+      title: 'KekeGo — Local Tricycle (Keke) Ride-Hailing Mobile App',
       subtitle:
-        'Hyper-local tricycle (Keke) ride-hailing platform tailored for Ghanaian commuters and drivers with Clean Architecture and offline queue resilience.',
-      highlights: [
-        'Designed dual rider and driver flows with upfront fare estimation, landmark-based pickup selection, and real-time trip status tracking.',
-        'Implemented local request queueing and automatic retry orchestration so bookings survive intermittent 3G/edge network drops.',
-        'Structured with modular Clean Architecture layers (Domain, Data, Presentation) for rapid feature scaling.'
+        'Local tricycle ("Keke") ride-hailing mobile app built with Flutter and Clean Architecture for Ghanaian commuters.',
+      screens: [
+        {
+          src: 'assets/projects/kekego-splash.webp',
+          caption: 'KekeGo Splash Screen — Book a Keke. Ride Smarter.'
+        }
       ],
-      stack: ['Flutter', 'Dart', 'Clean Architecture', 'Firebase', 'Geolocation & Maps', 'Offline Queue']
+      highlights: [
+        'Designed a dedicated Ghanaian mobility experience tailored around everyday Keke tricycle trips ("Book a Keke. Ride Smarter.").',
+        'Structured with Clean Architecture separation (Domain, Data, Presentation) to keep booking state, location services, and backend integration modular.',
+        'Built with offline-tolerant request handling so booking actions recover gracefully on unreliable mobile connections.'
+      ],
+      stack: ['Flutter', 'Dart', 'Clean Architecture', 'Firebase', 'Location Services']
     },
     harvestgo: {
-      badge: 'MULTI-TENANT MVP • E-COMMERCE',
-      title: 'HarvestGo — 3-in-1 Hyper-Local Grocery Storefront, Vendor & Admin Suite',
+      badge: 'E-COMMERCE APP',
+      title: 'HarvestGo — Fresh Local Produce & Grocery Delivery App',
       subtitle:
-        'Unified multi-portal Flutter application delivering a 15-minute local produce shopping experience alongside partner inventory and dispatch consoles.',
-      highlights: [
-        'Single codebase supporting 3 role-based portals: Customer Storefront, Vendor Partner Inventory Manager, and Admin Operations Console.',
-        'Real-time order lifecycle updates, cart persistence, and promotional flash deals backed by Cloud Firestore.',
-        'Responsive layout engine adapting seamlessly between mobile handsets, tablets, and desktop web browsers.'
+        'Flutter grocery storefront connecting local farms and butchers with location-aware browsing, cart checkout, Google Play Billing, and order tracking in Ghana Cedis.',
+      screens: [
+        {
+          src: 'assets/projects/harvestgo-home.webp',
+          caption: 'Storefront Home — Categories, Search & Recommended Fresh Produce'
+        },
+        {
+          src: 'assets/projects/harvestgo-cart.webp',
+          caption: 'Shopping Cart — Quantities, Free Delivery Progress & GH₵ Checkout'
+        },
+        {
+          src: 'assets/projects/harvestgo-payment.webp',
+          caption: 'Order Confirmation — Order Summary & Google Play Billing'
+        },
+        {
+          src: 'assets/projects/harvestgo-orders.webp',
+          caption: 'My Orders — Active & Delivered Filters, Reorder & Track'
+        }
       ],
-      stack: ['Flutter Multi-Platform', 'Dart', 'Cloud Firestore', 'Firebase Auth', 'Role-Based Routing']
+      highlights: [
+        'Built a fresh produce storefront with category browsing (Fruits, Vegetables, Dairy, Meat), search & filters, and location-aware pricing in GH₵.',
+        'Implemented full cart management, free-delivery threshold indicators, Google Play Billing checkout, and instant order confirmation receipts.',
+        'Created the My Orders hub with Active/Delivered tabs, one-tap Reorder, and step-by-step order tracking backed by Cloud Firestore.'
+      ],
+      stack: ['Flutter', 'Dart', 'Cloud Firestore', 'Firebase Auth', 'Google Play Billing']
     },
     mystore: {
-      badge: 'REAL PROJECT • RETAIL POS',
-      title: 'MyStoreManagement — Offline-First Retail Inventory, Barcode & Sales POS',
+      badge: 'OFFLINE RETAIL POS',
+      title: 'MyStoreManagement — Offline Retail POS, Inventory & Expense Tracker',
       subtitle:
-        'Production-ready point-of-sale and inventory ledger built for retail shop owners requiring 100% offline reliability with cloud spreadsheet backup.',
-      highlights: [
-        'Powered by Hive NoSQL local database for zero-latency barcode scanning, stock deduction, and daily profit/loss analytics without internet.',
-        'One-tap export and synchronization with Microsoft Excel (.xlsx) and Google Sheets for accountant-ready reporting.',
-        'Includes low-stock threshold alerts, batch expiry tracking, and printable receipt summaries.'
+        'Offline-first shop management and expense tracking app built for retail shop owners to monitor daily sales, expenses, profit margins, and inventory in Ghana Cedis.',
+      screens: [
+        {
+          src: 'assets/projects/mystore-splash.webp',
+          caption: 'App Launch — MyStoreManagement Expense Tracker'
+        },
+        {
+          src: 'assets/projects/mystore-dashboard.webp',
+          caption: 'Live POS Dashboard — Today’s Sales, Expenses, Profit Margin & Stock'
+        },
+        {
+          src: 'assets/projects/mystore-reports.webp',
+          caption: 'Reports & Analytics — Financial Ratio Donut Chart & Performance Metrics'
+        }
       ],
-      stack: ['Flutter', 'Dart', 'Hive Local DB', 'Barcode Scanner', 'Excel & Google Sheets API']
+      highlights: [
+        'Built a Live POS Dashboard summarizing daily Sales, Expenses, Net Profit & Margin %, and total Inventory Items with low-stock alerts in Ghana Cedis (₵).',
+        'Organized counter workflows across five clean tabs — Dashboard, Items, Sales, Expenses, and Reports — with local offline persistence.',
+        'Added a visual Reports & Analytics screen featuring an Income vs. Expenses Financial Ratio donut chart and real-time Performance Metrics.'
+      ],
+      stack: ['Flutter', 'Dart', 'Offline Local Storage', 'Retail POS', 'Financial Charts']
     },
     ministryhub: {
-      badge: 'LIVE ON GOOGLE PLAY • COMMUNITY PLATFORM',
-      title: 'OJ Studios MinistryHub — Digital Learning, Sermons & Community Platform',
+      badge: 'LIVE ON GOOGLE PLAY',
+      title: 'OJ Studios — Digital Ministry, Sermons & Community App',
       subtitle:
-        'Published production mobile ecosystem on Google Play built with Flutter, Riverpod, GoRouter, and Firebase for structured courses and community engagement.',
+        'Published Google Play mobile app ("We Create · Teach · Inspire · Impact.") combining ministry community fellowship, learning, programs, and sermon media.',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ojstudios.app',
+      screens: [
+        {
+          src: 'assets/projects/ojstudios-welcome.webp',
+          caption: 'Welcome Screen — Learn, Grow, Participate & Share'
+        },
+        {
+          src: 'assets/projects/ojstudios-onboarding.webp',
+          caption: 'Onboarding — Community & Fellowship Overview'
+        },
+        {
+          src: 'assets/projects/ojstudios-home.webp',
+          caption: 'Home Feed — Apostolic Voice Quotes, Role-Gated Devotions & Programs'
+        },
+        {
+          src: 'assets/projects/ojstudios-sermons.webp',
+          caption: 'Sermons Library — Search by Title, Speaker or Scripture (Audio, Video & Notes)'
+        }
+      ],
       highlights: [
-        'Published on Google Play featuring daily devotional streaks, audio/video sermon streaming, interactive study courses, and a moderated prayer wall.',
-        'Role-based access control allowing ministry leaders to publish content, review submissions, and manage announcements.',
-        'Engineered with reactive Riverpod state management and declarative GoRouter deep linking.'
+        'Published on Google Play with structured onboarding, community fellowship features, learning modules, and scheduled ministry programs.',
+        'Built a searchable Sermons library filterable by title, speaker, or scripture reference with Audio, Video, and Study Notes per sermon.',
+        'Implemented role-based access control for devotionals and ministry sections using Riverpod state management, GoRouter navigation, and Firebase.'
       ],
       stack: ['Flutter', 'Google Play', 'Riverpod', 'GoRouter', 'Firebase Auth & Firestore', 'Media Streaming']
     },
     'hymns-logig': {
-      badge: 'LIVE ON GOOGLE PLAY • BILINGUAL AUDIO APP',
-      title: 'COC Hymns Player — Bilingual English & Twi Audio Worship Application',
+      badge: 'LIVE ON GOOGLE PLAY',
+      title: 'COC Hymns Player — Bilingual Twi & English Hymnal & Audio App',
       subtitle:
-        'Published Google Play digital hymnal and background audio player supporting side-by-side English and Twi lyrics, offline search, and curated streams.',
+        'Published Google Play digital hymnal and audio player supporting searchable Twi Hymns (Asore Ndwom) and English Hymns with offline downloads and lyrics playback.',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=addemma.coc_music_player',
-      highlights: [
-        'Published on Google Play with instant bilingual switching between English and Twi hymn lyrics, adjustable typography, and dark worship mode.',
-        'Background audio playback and YouTube/audio stream integration with persistent favorites and custom service playlists.',
-        'Built with clean, offline-ready UI patterns for seamless playback and search.'
+      screens: [
+        {
+          src: 'assets/projects/cochymns-list.webp',
+          caption: 'Twi Hymns Directory — Search, Favorites, Download Audio & Share'
+        },
+        {
+          src: 'assets/projects/cochymns-lyrics.webp',
+          caption: 'Lyrics & Audio Player — Dark Playback View with Scrubber & Controls'
+        },
+        {
+          src: 'assets/projects/cochymns-favorites.webp',
+          caption: 'Favorite Audios — Twi & English Categories with Floating Mini-Player'
+        }
       ],
-      stack: ['Flutter', 'Google Play', 'Dart', 'Background Audio Service', 'Bilingual Search', 'Local Persistence']
+      highlights: [
+        'Published on Google Play with fast search by hymn number or title across Twi Hymns (Asore Ndwom) and English Hymns.',
+        'Designed an immersive dark Lyrics & Audio Player screen with scrubber controls, shuffle/repeat toggles, and readable verse layout.',
+        'Includes Add to Favorites, Download Audio for offline worship, Share Hymn, and a categorized Favorite Audios view with a persistent floating mini-player.'
+      ],
+      stack: ['Flutter', 'Google Play', 'Dart', 'Audio Playback', 'Offline Downloads', 'Bilingual Search']
     }
   };
 
@@ -335,10 +443,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const caseModalBadge = document.getElementById('caseModalBadge');
   const caseModalTitle = document.getElementById('caseModalTitle');
   const caseModalSubtitle = document.getElementById('caseModalSubtitle');
+  const caseModalGalleryWrap = document.getElementById('caseModalGalleryWrap');
+  const caseModalGallery = document.getElementById('caseModalGallery');
   const caseModalHighlights = document.getElementById('caseModalHighlights');
   const caseModalStack = document.getElementById('caseModalStack');
   const caseModalInquire = document.getElementById('caseModalInquire');
   const caseModalPlayLink = document.getElementById('caseModalPlayLink');
+
+  const screenLightbox = document.getElementById('screenLightbox');
+  const screenLightboxClose = document.getElementById('screenLightboxClose');
+  const screenLightboxImg = document.getElementById('screenLightboxImg');
+  const screenLightboxCaption = document.getElementById('screenLightboxCaption');
+
+  function openScreenLightbox(src, caption) {
+    if (!screenLightbox || !screenLightboxImg) return;
+    screenLightboxImg.src = src;
+    screenLightboxImg.alt = caption || 'App screenshot preview';
+    if (screenLightboxCaption) {
+      screenLightboxCaption.textContent = caption || '';
+    }
+    screenLightbox.classList.add('open');
+    screenLightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeScreenLightbox() {
+    if (!screenLightbox) return;
+    screenLightbox.classList.remove('open');
+    screenLightbox.setAttribute('aria-hidden', 'true');
+  }
+
+  if (screenLightboxClose) {
+    screenLightboxClose.addEventListener('click', closeScreenLightbox);
+  }
+  if (screenLightbox) {
+    screenLightbox.addEventListener('click', (e) => {
+      if (e.target === screenLightbox) closeScreenLightbox();
+    });
+  }
 
   function openCaseModal(projectId) {
     const data = projectCaseStudies[projectId];
@@ -347,6 +488,41 @@ document.addEventListener('DOMContentLoaded', () => {
     caseModalBadge.textContent = data.badge;
     caseModalTitle.textContent = data.title;
     caseModalSubtitle.textContent = data.subtitle;
+
+    if (caseModalGallery && caseModalGalleryWrap) {
+      const screens = Array.isArray(data.screens) ? data.screens : [];
+      if (screens.length > 0) {
+        caseModalGalleryWrap.hidden = false;
+        caseModalGallery.innerHTML = '';
+        screens.forEach((screen) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'case-gallery-item';
+          btn.setAttribute('aria-label', `Enlarge screenshot: ${screen.caption}`);
+
+          const frame = document.createElement('span');
+          frame.className = 'case-gallery-frame';
+
+          const img = document.createElement('img');
+          img.src = screen.src;
+          img.alt = screen.caption;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+
+          const cap = document.createElement('span');
+          cap.className = 'case-gallery-caption';
+          cap.textContent = screen.caption;
+
+          frame.appendChild(img);
+          btn.append(frame, cap);
+          btn.addEventListener('click', () => openScreenLightbox(screen.src, screen.caption));
+          caseModalGallery.appendChild(btn);
+        });
+      } else {
+        caseModalGalleryWrap.hidden = true;
+        caseModalGallery.innerHTML = '';
+      }
+    }
 
     if (caseModalPlayLink) {
       if (data.playStoreUrl) {
@@ -455,6 +631,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (screenLightbox && screenLightbox.classList.contains('open')) {
+        closeScreenLightbox();
+        return;
+      }
       if (caseModalBackdrop && caseModalBackdrop.classList.contains('open')) {
         closeCaseModal();
       }
